@@ -1,0 +1,9 @@
+{
+  "topTen": "Top Ten",
+  "popular": "Popular",
+  "search": "Search",
+  "bookmakrs": "Bookmarks",
+  "readMore": "Read more",
+  "seeMore": "SEE MORE",
+  "searchResult": "Search result ({count})"
+}

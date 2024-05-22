@@ -1,0 +1,9 @@
+{
+  "topTen": "Топ десять",
+  "popular": "Популярні",
+  "search": "Пошук",
+  "bookmakrs": "Закладки",
+  "readMore": "Читати далі",
+  "seeMore": "Більше",
+  "searchResult": "Результат пошуку ({count})"
+}
