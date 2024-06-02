@@ -39,8 +39,7 @@ class WideMovieCard extends StatelessWidget {
                   height: 359,
                   child: MovieImage(
                     imageUrl: movie.posterPath ?? '',
-                    memCacheWidth: _pictureSize.width.toInt(),
-                    memCacheHeight: _pictureSize.height.toInt(),
+                    memCacheWidth: _pictureSize.width.toInt() * 2,
                   ),
                 ),
                 const SizedBox(width: defaultHorizontalPadding),

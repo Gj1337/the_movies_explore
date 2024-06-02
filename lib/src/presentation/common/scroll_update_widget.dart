@@ -6,18 +6,20 @@ class ScrollUpdateWidget extends StatefulWidget {
     required this.builder,
     this.border = 100,
     this.onGetBorder,
+    this.scrollController,
   });
 
   final int border;
   final VoidCallback? onGetBorder;
   final Widget Function(ScrollController crollController) builder;
+  final ScrollController? scrollController;
 
   @override
   State<ScrollUpdateWidget> createState() => _ScrollUpdateWidgetState();
 }
 
 class _ScrollUpdateWidgetState extends State<ScrollUpdateWidget> {
-  final ScrollController _scrollController = ScrollController();
+  late final ScrollController _scrollController;
 
   bool alredyGotBorder = false;
 
@@ -25,10 +27,12 @@ class _ScrollUpdateWidgetState extends State<ScrollUpdateWidget> {
   void initState() {
     super.initState();
 
-    _scrollController.addListener(onScroll);
+    _scrollController = widget.scrollController ?? ScrollController();
+
+    _scrollController.addListener(_onScroll);
   }
 
-  void onScroll() {
+  void _onScroll() {
     final maxScrollExtent = _scrollController.position.maxScrollExtent;
     final currentScrollPosition = _scrollController.position.pixels;
 
@@ -53,7 +57,7 @@ class _ScrollUpdateWidgetState extends State<ScrollUpdateWidget> {
 
   @override
   void dispose() {
-    _scrollController.dispose();
+    if (widget.scrollController == null) _scrollController.dispose();
 
     super.dispose();
   }

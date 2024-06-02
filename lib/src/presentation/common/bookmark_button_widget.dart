@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/utils/animation_speed.dart';
 
 class BookmarkButtonWidget extends StatelessWidget {
   const BookmarkButtonWidget({
@@ -15,11 +17,19 @@ class BookmarkButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: onPressed,
-      icon: SvgPicture.asset(
-        inBookmarks ? bookmarkActiveImage : bookMarkDefaultImage,
-        width: 24,
-        height: 24,
+      onPressed: () {
+        onPressed?.call();
+
+        HapticFeedback.lightImpact();
+      },
+      icon: AnimatedSwitcher(
+        duration: AnimationSpeed.fast.duration,
+        child: SvgPicture.asset(
+          key: ValueKey(inBookmarks),
+          inBookmarks ? bookmarkActiveImage : bookMarkDefaultImage,
+          width: 24,
+          height: 24,
+        ),
       ),
     );
   }

@@ -7,11 +7,19 @@ import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookma
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_state.dart';
 import 'package:the_movies_expore/src/presentation/common/movies_grid_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/theme.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
 
-class BookmarksWidget extends StatelessWidget {
+class BookmarksWidget extends StatefulWidget {
   const BookmarksWidget({super.key});
+
+  @override
+  State<BookmarksWidget> createState() => _BookmarksWidgetState();
+}
+
+class _BookmarksWidgetState extends State<BookmarksWidget> {
+  late final ScrollController scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,16 +44,27 @@ class BookmarksWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(
               horizontal: defaultHorizontalPadding,
             ),
-            child: SingleChildScrollView(
-              child: MoviesGridWidget(
-                onBookmarkClick: onBookmarkClick,
-                onMovieClick: onCardClick,
-                movies: movies,
+            child: ScrollUpButtonWidget(
+              scrollController: scrollController,
+              child: SingleChildScrollView(
+                controller: scrollController,
+                child: MoviesGridWidget(
+                  onBookmarkClick: onBookmarkClick,
+                  onMovieClick: onCardClick,
+                  movies: movies,
+                ),
               ),
             ),
           ),
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+
+    super.dispose();
   }
 }

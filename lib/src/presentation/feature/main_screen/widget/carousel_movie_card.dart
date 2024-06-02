@@ -38,8 +38,7 @@ class CarouselMovieCard extends StatelessWidget {
                   height: _pictureSize.height,
                   child: MovieImage(
                     imageUrl: movie.backdropPath ?? movie.posterPath ?? '',
-                    memCacheWidth: _pictureSize.width.toInt(),
-                    memCacheHeight: _pictureSize.height.toInt(),
+                    memCacheWidth: _pictureSize.width.toInt() * 2,
                   ),
                 ),
                 const SizedBox(height: 12),
