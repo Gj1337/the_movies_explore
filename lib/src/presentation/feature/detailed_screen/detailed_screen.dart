@@ -60,10 +60,12 @@ class DetailedScreen extends StatelessWidget {
                           begin: Alignment.topCenter,
                           end: Alignment.bottomCenter,
                           colors: [
+                            Colors.black.withOpacity(0.4),
+                            Colors.transparent,
                             Colors.transparent,
                             backgroundColor,
                           ],
-                          stops: const [0.5, 1.0],
+                          stops: const [0.0, 0.18, 0.5, 1.0],
                         ),
                       ),
                     ),
