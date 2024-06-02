@@ -8,19 +8,15 @@ abstract final class Routes {
     name: 'main',
   );
   static const RouteInfo detailedScreen = (
-    path: 'detailed',
+    path: '/detailed',
     name: 'detailed',
   );
-  static const RouteInfo latestScreen = (
-    path: 'latest',
-    name: 'latest',
-  );
   static const RouteInfo searchScreen = (
-    path: 'search',
+    path: '/search',
     name: 'search',
   );
   static const RouteInfo bookmarksScreen = (
-    path: 'bookmarks',
+    path: '/bookmarks',
     name: 'bookmarks',
   );
 }
@@ -28,36 +24,38 @@ abstract final class Routes {
 final _router = GoRouter(
   initialLocation: Routes.mainScreen.path,
   routes: [
-    ShellRoute(
-      builder: (context, state, child) {
-        final bookmarksCubit = context.getIt.get<BookmarksCubit>()..onCreate();
+    GoRoute(
+      path: Routes.detailedScreen.path,
+      name: Routes.detailedScreen.name,
+      builder: (_, state) {
+        final movie = state.extra as Movie;
 
-        return BottomNavigationBarWrapper(
-          path: state.fullPath,
-          child: BlocProvider<BookmarksCubit>(
-              lazy: false, create: (_) => bookmarksCubit, child: child),
-        );
+        return DetailedScreen(movie: movie);
       },
-      routes: [
-        GoRoute(
-          path: Routes.mainScreen.path,
-          name: Routes.mainScreen.name,
-          builder: (_, ___) => const MainScreen(),
+    ),
+    StatefulShellRoute.indexedStack(
+      builder: (_, __, child) => BottomNavigationBarWrapper(child: child),
+      branches: [
+        StatefulShellBranch(
           routes: [
             GoRoute(
-              path: Routes.detailedScreen.path,
-              name: Routes.detailedScreen.name,
-              builder: (_, state) {
-                final movie = state.extra as Movie;
-
-                return DetailedScreen(movie: movie);
-              },
+              path: Routes.mainScreen.path,
+              name: Routes.mainScreen.name,
+              builder: (_, ___) => const MainScreen(),
             ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
             GoRoute(
               path: Routes.searchScreen.path,
               name: Routes.searchScreen.name,
               builder: (_, ___) => const SeachScreen(),
             ),
+          ],
+        ),
+        StatefulShellBranch(
+          routes: [
             GoRoute(
               path: Routes.bookmarksScreen.path,
               name: Routes.bookmarksScreen.name,

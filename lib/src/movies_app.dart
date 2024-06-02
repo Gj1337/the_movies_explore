@@ -26,6 +26,16 @@ class MoviesApp extends StatelessWidget {
       getIt: GetIt.instance,
       setupGetIt: init,
       child: MaterialApp.router(
+        builder: (context, child) {
+          final bookmarksCubit = context.getIt.get<BookmarksCubit>()
+            ..onCreate();
+
+          return BlocProvider<BookmarksCubit>(
+            lazy: false,
+            create: (_) => bookmarksCubit,
+            child: child,
+          );
+        },
         routerConfig: _router,
         theme: theme,
         localizationsDelegates: const [
