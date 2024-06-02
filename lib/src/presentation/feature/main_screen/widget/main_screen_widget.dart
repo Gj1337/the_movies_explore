@@ -29,6 +29,12 @@ class MainScreenWidget extends StatelessWidget {
     onBookmarkClick(movie) =>
         context.read<BookmarksCubit>().changeBookmarkStatus(movie);
 
+    onPageRefresh() {
+      final language = Localizations.localeOf(context).languageCode;
+
+      return context.read<MainScreenCubit>().onPageRefresh(language);
+    }
+
     return BlocBuilder<MainScreenCubit, MainScreenState>(
       builder: (_, state) {
         final MainScreenState(:topMovies, :latestMovies) = state;
@@ -36,45 +42,48 @@ class MainScreenWidget extends StatelessWidget {
         final carouselMovies =
             topMovies.sublist(0, min(topMovies.length, _carouselLength));
 
-        return CustomScrollView(
-          slivers: [
-            SliverStickyHeader(
-              sticky: false,
-              header:
-                  AppBar(title: BigHeaderText(context.localizations.topTen)),
-              sliver: SliverToBoxAdapter(
-                child: BookmarksMoviesWrapperBuilder(
-                  movies: carouselMovies,
-                  builder: (movies) => CarouselMoviesWidget(
-                    onBookmarkClick: onBookmarkClick,
-                    onMovieClick: onCardClick,
-                    movies: movies,
-                    isLoading: carouselMovies.isEmpty,
+        return RefreshIndicator(
+          onRefresh: onPageRefresh,
+          child: CustomScrollView(
+            slivers: [
+              SliverStickyHeader(
+                sticky: false,
+                header:
+                    AppBar(title: BigHeaderText(context.localizations.topTen)),
+                sliver: SliverToBoxAdapter(
+                  child: BookmarksMoviesWrapperBuilder(
+                    movies: carouselMovies,
+                    builder: (movies) => CarouselMoviesWidget(
+                      onBookmarkClick: onBookmarkClick,
+                      onMovieClick: onCardClick,
+                      movies: movies,
+                      isLoading: carouselMovies.isEmpty,
+                    ),
                   ),
                 ),
               ),
-            ),
-            SliverStickyHeader(
-              header: ColoredBox(
-                color: Theme.of(context).scaffoldBackgroundColor,
-                child: AppBar(
-                  title: BigHeaderText(context.localizations.popular),
+              SliverStickyHeader(
+                header: ColoredBox(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  child: AppBar(
+                    title: BigHeaderText(context.localizations.popular),
+                  ),
+                ),
+                sliver: SliverToBoxAdapter(
+                  child: BookmarksMoviesWrapperBuilder(
+                    movies: latestMovies,
+                    builder: (movies) => latestMovies.isEmpty
+                        ? const LinearProgressIndicator()
+                        : MoviesGridWidget(
+                            onBookmarkClick: onBookmarkClick,
+                            onMovieClick: onCardClick,
+                            movies: movies,
+                          ),
+                  ),
                 ),
               ),
-              sliver: SliverToBoxAdapter(
-                child: BookmarksMoviesWrapperBuilder(
-                  movies: latestMovies,
-                  builder: (movies) => latestMovies.isEmpty
-                      ? const LinearProgressIndicator()
-                      : MoviesGridWidget(
-                          onBookmarkClick: onBookmarkClick,
-                          onMovieClick: onCardClick,
-                          movies: movies,
-                        ),
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         );
       },
     );
