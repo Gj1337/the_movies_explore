@@ -6,6 +6,7 @@ import 'package:the_movies_expore/src/presentation/common/big_header_text.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/common/movies_grid_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_update_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/theme.dart';
 import 'package:the_movies_expore/src/presentation/feature/seach_screen/cubit/search_screen_cubit.dart';
@@ -42,35 +43,38 @@ class SearchScreenWidget extends StatelessWidget {
             child: ScrollUpdateWidget(
               onGetBorder: context.read<SearchSreenCubit>().uploadMore,
               border: 70,
-              builder: (scrollController) => SingleChildScrollView(
-                controller: scrollController,
-                child: Column(
-                  children: [
-                    SearchLineWidget(
-                      onTextChanged: (text) =>
-                          context.read<SearchSreenCubit>().searchMovies(
-                                name: text,
-                                language: language,
-                              ),
-                    ),
-                    const SizedBox(height: defaultHorizontalPadding),
-                    if (state.totalResult != null)
-                      SearchResultCount(
-                        count: state.totalResult ?? 0,
+              builder: (scrollController) => ScrollUpButtonWidget(
+                scrollController: scrollController,
+                child: SingleChildScrollView(
+                  controller: scrollController,
+                  child: Column(
+                    children: [
+                      SearchLineWidget(
+                        onTextChanged: (text) =>
+                            context.read<SearchSreenCubit>().searchMovies(
+                                  name: text,
+                                  language: language,
+                                ),
                       ),
-                    const SizedBox(height: defaultHorizontalPadding),
-                    if (state.isLoading)
-                      const Center(child: LinearProgressIndicator()),
-                    if (!state.isLoading)
-                      BookmarksMoviesWrapperBuilder(
-                        movies: state.foundedMovies ?? [],
-                        builder: (movies) => MoviesGridWidget(
-                          movies: movies,
-                          onMovieClick: onCardClick,
-                          onBookmarkClick: onBookmarkClick,
+                      const SizedBox(height: defaultHorizontalPadding),
+                      if (state.totalResult != null)
+                        SearchResultCount(
+                          count: state.totalResult ?? 0,
                         ),
-                      ),
-                  ],
+                      const SizedBox(height: defaultHorizontalPadding),
+                      if (state.isLoading)
+                        const Center(child: LinearProgressIndicator()),
+                      if (!state.isLoading)
+                        BookmarksMoviesWrapperBuilder(
+                          movies: state.foundedMovies ?? [],
+                          builder: (movies) => MoviesGridWidget(
+                            movies: movies,
+                            onMovieClick: onCardClick,
+                            onBookmarkClick: onBookmarkClick,
+                          ),
+                        ),
+                    ],
+                  ),
                 ),
               ),
             ),

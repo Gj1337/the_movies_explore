@@ -8,6 +8,7 @@ import 'package:the_movies_expore/src/movies_app.dart';
 import 'package:the_movies_expore/src/presentation/common/big_header_text.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
+import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/cubit/main_screen_cubit.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/cubit/main_screen_state.dart';
 import 'package:the_movies_expore/src/presentation/common/movies_grid_widget.dart';
@@ -16,8 +17,15 @@ import 'package:the_movies_expore/src/presentation/utils/localization_extension.
 
 const _carouselLength = 10;
 
-class MainScreenWidget extends StatelessWidget {
+class MainScreenWidget extends StatefulWidget {
   const MainScreenWidget({super.key});
+
+  @override
+  State<MainScreenWidget> createState() => _MainScreenWidgetState();
+}
+
+class _MainScreenWidgetState extends State<MainScreenWidget> {
+  final scrollController = ScrollController();
 
   @override
   Widget build(BuildContext context) {
@@ -44,48 +52,59 @@ class MainScreenWidget extends StatelessWidget {
 
         return RefreshIndicator(
           onRefresh: onPageRefresh,
-          child: CustomScrollView(
-            slivers: [
-              SliverStickyHeader(
-                sticky: false,
-                header:
-                    AppBar(title: BigHeaderText(context.localizations.topTen)),
-                sliver: SliverToBoxAdapter(
-                  child: BookmarksMoviesWrapperBuilder(
-                    movies: carouselMovies,
-                    builder: (movies) => CarouselMoviesWidget(
-                      onBookmarkClick: onBookmarkClick,
-                      onMovieClick: onCardClick,
-                      movies: movies,
-                      isLoading: carouselMovies.isEmpty,
+          child: ScrollUpButtonWidget(
+            scrollController: scrollController,
+            child: CustomScrollView(
+              controller: scrollController,
+              slivers: [
+                SliverStickyHeader(
+                  sticky: false,
+                  header: AppBar(
+                      title: BigHeaderText(context.localizations.topTen)),
+                  sliver: SliverToBoxAdapter(
+                    child: BookmarksMoviesWrapperBuilder(
+                      movies: carouselMovies,
+                      builder: (movies) => CarouselMoviesWidget(
+                        onBookmarkClick: onBookmarkClick,
+                        onMovieClick: onCardClick,
+                        movies: movies,
+                        isLoading: carouselMovies.isEmpty,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              SliverStickyHeader(
-                header: ColoredBox(
-                  color: Theme.of(context).scaffoldBackgroundColor,
-                  child: AppBar(
-                    title: BigHeaderText(context.localizations.popular),
+                SliverStickyHeader(
+                  header: ColoredBox(
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                    child: AppBar(
+                      title: BigHeaderText(context.localizations.popular),
+                    ),
+                  ),
+                  sliver: SliverToBoxAdapter(
+                    child: BookmarksMoviesWrapperBuilder(
+                      movies: latestMovies,
+                      builder: (movies) => latestMovies.isEmpty
+                          ? const LinearProgressIndicator()
+                          : MoviesGridWidget(
+                              onBookmarkClick: onBookmarkClick,
+                              onMovieClick: onCardClick,
+                              movies: movies,
+                            ),
+                    ),
                   ),
                 ),
-                sliver: SliverToBoxAdapter(
-                  child: BookmarksMoviesWrapperBuilder(
-                    movies: latestMovies,
-                    builder: (movies) => latestMovies.isEmpty
-                        ? const LinearProgressIndicator()
-                        : MoviesGridWidget(
-                            onBookmarkClick: onBookmarkClick,
-                            onMovieClick: onCardClick,
-                            movies: movies,
-                          ),
-                  ),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
     );
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+
+    super.dispose();
   }
 }

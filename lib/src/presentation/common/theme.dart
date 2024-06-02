@@ -10,6 +10,9 @@ const _surfaceColor = Color(0xFF424242);
 const _navigationAppBarColor = Color(0xFF0B0B0B);
 
 final theme = ThemeData.dark().copyWith(
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    backgroundColor: _mainColor,
+  ),
   colorScheme: const ColorScheme.dark().copyWith(
     primary: _mainColor,
     surface: _surfaceColor,

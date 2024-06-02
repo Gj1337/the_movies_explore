@@ -5,12 +5,11 @@ class MovieImage extends StatelessWidget {
   const MovieImage({
     super.key,
     required this.imageUrl,
-    this.memCacheHeight,
     this.memCacheWidth,
   });
 
   final String imageUrl;
-  final int? memCacheHeight;
+
   final int? memCacheWidth;
 
   @override
@@ -19,8 +18,7 @@ class MovieImage extends StatelessWidget {
       color: Theme.of(context).colorScheme.surface,
       child: CachedNetworkImage(
         imageUrl: imageUrl,
-        fit: BoxFit.fill,
-        memCacheHeight: memCacheHeight,
+        fit: BoxFit.cover,
         memCacheWidth: memCacheWidth,
       ),
     );
