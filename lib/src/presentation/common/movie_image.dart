@@ -19,7 +19,7 @@ class MovieImage extends StatelessWidget {
       color: Theme.of(context).colorScheme.surface,
       child: CachedNetworkImage(
         imageUrl: imageUrl,
-        fit: BoxFit.cover,
+        fit: BoxFit.fill,
         memCacheHeight: memCacheHeight,
         memCacheWidth: memCacheWidth,
       ),

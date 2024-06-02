@@ -37,6 +37,11 @@ final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
     }
   }
 
+  Future<void> onPageRefresh(String language) async {
+    await _movieRepository.fetchTopMovies(language: language);
+    await _movieRepository.fetchPopularMovies(language: language);
+  }
+
   void _onLatestMoviesChanged(MoviesPage moviesPage) {
     emit(state.copyWith(latestMovies: moviesPage.movies));
   }
