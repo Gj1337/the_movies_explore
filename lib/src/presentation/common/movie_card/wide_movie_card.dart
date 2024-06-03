@@ -1,14 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:the_movies_expore/src/domain/entity/movie.dart';
-import 'package:the_movies_expore/src/presentation/common/bookmark_button_widget.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
-import 'package:the_movies_expore/src/presentation/common/movie_wide_rate_widget.dart';
-import 'package:the_movies_expore/src/presentation/common/movie_image.dart';
+part of 'movie_card.dart';
 
-const _pictureSize = Size(182, 359);
+const _wideCardPictureSize = Size(182, 359);
 
-class WideMovieCard extends StatelessWidget {
-  const WideMovieCard({
+class _WideMovieCard extends StatelessWidget {
+  const _WideMovieCard({
     super.key,
     required this.movie,
     this.onCardClick,
@@ -39,7 +34,7 @@ class WideMovieCard extends StatelessWidget {
                   height: 359,
                   child: MovieImage(
                     imageUrl: movie.posterPath ?? '',
-                    memCacheWidth: _pictureSize.width.toInt() * 2,
+                    memCacheWidth: _wideCardPictureSize.width.toInt() * 2,
                   ),
                 ),
                 const SizedBox(width: defaultHorizontalPadding),
@@ -69,7 +64,7 @@ class WideMovieCard extends StatelessWidget {
                           movie.overview,
                           style: overviewMovieOnCardTextStyle,
                           overflow: TextOverflow.ellipsis,
-                          maxLines: 6,
+                          maxLines: 7,
                         ),
                       ),
                     ],
