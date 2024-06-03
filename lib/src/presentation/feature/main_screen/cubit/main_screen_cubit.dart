@@ -30,7 +30,11 @@ final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
 
     try {
       await _movieRepository.fetchTopMovies(language: language);
+    } catch (exception) {
+      logger.e('onCreate catch $exception');
+    }
 
+    try {
       await _movieRepository.fetchPopularMovies(language: language);
     } catch (exception) {
       logger.e('onCreate catch $exception');
@@ -38,8 +42,17 @@ final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
   }
 
   Future<void> onPageRefresh(String language) async {
-    await _movieRepository.fetchTopMovies(language: language);
-    await _movieRepository.fetchPopularMovies(language: language);
+    try {
+      await _movieRepository.fetchTopMovies(language: language);
+    } catch (exception) {
+      logger.e('onPageRefresh catch $exception');
+    }
+
+    try {
+      await _movieRepository.fetchPopularMovies(language: language);
+    } catch (exception) {
+      logger.e('onPageRefresh catch $exception');
+    }
   }
 
   void _onLatestMoviesChanged(MoviesPage moviesPage) {

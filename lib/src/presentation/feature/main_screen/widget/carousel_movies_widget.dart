@@ -1,8 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
-import 'package:the_movies_expore/src/presentation/common/loding_widget.dart';
-import 'package:the_movies_expore/src/presentation/feature/main_screen/widget/carousel_movie_card.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_card/movie_card.dart';
 import 'package:the_movies_expore/src/presentation/utils/animation_speed.dart';
 
 const _height = 275.0;
@@ -23,33 +22,29 @@ class CarouselMoviesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final movieWidgets = movies
-        .map(
-          (movie) => CarouselMovieCard(
-            movie: movie,
-            onBookmarkClick: () => onBookmarkClick?.call(movie),
-            onCardClick: () => onMovieClick?.call(movie),
-          ),
-        )
-        .toList();
+    final movieWidgets = isLoading
+        ? List.generate(3, (_) => const MovieCard.bigPictureShimmer())
+        : movies
+            .map(
+              (movie) => MovieCard.bitPicture(
+                movie,
+                onBookmarkClick: () => onBookmarkClick?.call(movie),
+                onCardClick: () => onMovieClick?.call(movie),
+              ),
+            )
+            .toList();
 
     return Center(
       child: AnimatedSwitcher(
         duration: AnimationSpeed.normal.duration,
-        child: isLoading
-            ? Container(
-                height: _height,
-                alignment: Alignment.center,
-                child: const LoadingWidget(),
-              )
-            : CarouselSlider(
-                items: movieWidgets,
-                options: CarouselOptions(
-                  autoPlay: true,
-                  height: _height,
-                  enableInfiniteScroll: false,
-                ),
-              ),
+        child: CarouselSlider(
+          items: movieWidgets,
+          options: CarouselOptions(
+            autoPlay: true,
+            height: _height,
+            enableInfiniteScroll: false,
+          ),
+        ),
       ),
     );
   }

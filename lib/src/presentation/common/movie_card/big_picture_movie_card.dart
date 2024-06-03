@@ -1,14 +1,10 @@
-import 'package:flutter/material.dart';
-import 'package:the_movies_expore/src/domain/entity/movie.dart';
-import 'package:the_movies_expore/src/presentation/common/bookmark_button_widget.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
-import 'package:the_movies_expore/src/presentation/common/movie_wide_rate_widget.dart';
-import 'package:the_movies_expore/src/presentation/common/movie_image.dart';
+part of 'movie_card.dart';
 
-const _pictureSize = Size(300, 200);
+const _bigPictureMovieCardSize = Size(300, 275);
+const _bigPicturePictureSize = Size(300, 200);
 
-class CarouselMovieCard extends StatelessWidget {
-  const CarouselMovieCard({
+class _PigPictureMovieCard extends StatelessWidget {
+  const _PigPictureMovieCard({
     super.key,
     required this.movie,
     this.onCardClick,
@@ -26,19 +22,19 @@ class CarouselMovieCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
       ),
       child: SizedBox(
-        width: 300,
-        height: 275,
+        width: _bigPictureMovieCardSize.width,
+        height: _bigPictureMovieCardSize.height,
         child: Stack(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: _pictureSize.width,
-                  height: _pictureSize.height,
+                  width: _bigPicturePictureSize.width,
+                  height: _bigPicturePictureSize.height,
                   child: MovieImage(
                     imageUrl: movie.backdropPath ?? movie.posterPath ?? '',
-                    memCacheWidth: _pictureSize.width.toInt() * 2,
+                    memCacheWidth: _bigPicturePictureSize.width.toInt() * 2,
                   ),
                 ),
                 const SizedBox(height: 12),

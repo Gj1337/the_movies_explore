@@ -83,13 +83,12 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                   sliver: SliverToBoxAdapter(
                     child: BookmarksMoviesWrapperBuilder(
                       movies: latestMovies,
-                      builder: (movies) => latestMovies.isEmpty
-                          ? const LinearProgressIndicator()
-                          : MoviesGridWidget(
-                              onBookmarkClick: onBookmarkClick,
-                              onMovieClick: onCardClick,
-                              movies: movies,
-                            ),
+                      builder: (movies) => MoviesGridWidget(
+                        onBookmarkClick: onBookmarkClick,
+                        onMovieClick: onCardClick,
+                        movies: movies,
+                        isLoading: latestMovies.isEmpty,
+                      ),
                     ),
                   ),
                 ),
