@@ -11,6 +11,7 @@ class Movie with _$Movie {
     required String overview,
     required double vote,
     required List<Genre> genres,
+    required String webUrl,
     String? posterPath,
     String? backdropPath,
     @Default(false) bool isBookmarked,

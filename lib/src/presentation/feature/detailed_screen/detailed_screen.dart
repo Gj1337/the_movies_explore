@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmark_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
@@ -32,12 +33,15 @@ class DetailedScreen extends StatelessWidget {
               pinned: true,
               expandedHeight: 550,
               actions: [
+                IconButton(
+                    onPressed: () => Share.shareUri(Uri.parse(movie.webUrl)),
+                    icon: const Icon(Icons.share)),
                 BookmarkButtonWidget(
                   inBookmarks: movie.isBookmarked,
                   onPressed: () => context
                       .read<BookmarksCubit>()
                       .changeBookmarkStatus(movie),
-                )
+                ),
               ],
               flexibleSpace: FlexibleSpaceBar(
                 titlePadding: const EdgeInsets.symmetric(
