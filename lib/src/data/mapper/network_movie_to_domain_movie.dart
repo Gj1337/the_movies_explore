@@ -17,6 +17,7 @@ final class NetworkMovieToDomainMovie {
         title: networkMovie.title,
         vote: networkMovie.vote / 2,
         overview: networkMovie.overview,
+        webUrl: '$hostSiteUrl/movie/${networkMovie.id}',
         genres: genres
             .where((genre) => networkMovie.genresId.contains(genre.id))
             .toList(),
