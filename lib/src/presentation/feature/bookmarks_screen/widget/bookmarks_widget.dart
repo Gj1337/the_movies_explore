@@ -6,7 +6,7 @@ import 'package:the_movies_expore/src/presentation/common/big_header_text.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_state.dart';
-import 'package:the_movies_expore/src/presentation/common/movies_grid_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/theme.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
@@ -40,19 +40,21 @@ class _BookmarksWidgetState extends State<BookmarksWidget> {
       body: BlocBuilder<BookmarksCubit, BookmarksState>(
         builder: (_, state) => BookmarksMoviesWrapperBuilder(
           movies: state.bookmarkedMovies,
-          builder: (movies) => Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: defaultHorizontalPadding,
-            ),
-            child: ScrollUpButtonWidget(
-              scrollController: scrollController,
-              child: SingleChildScrollView(
+          builder: (movies) => ScrollUpButtonWidget(
+            scrollController: scrollController,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: defaultHorizontalPadding,
+              ),
+              child: CustomScrollView(
                 controller: scrollController,
-                child: MoviesGridWidget(
-                  onBookmarkClick: onBookmarkClick,
-                  onMovieClick: onCardClick,
-                  movies: movies,
-                ),
+                slivers: [
+                  MovieListWidget(
+                    onBookmarkClick: onBookmarkClick,
+                    onMovieClick: onCardClick,
+                    movies: movies,
+                  ),
+                ],
               ),
             ),
           ),

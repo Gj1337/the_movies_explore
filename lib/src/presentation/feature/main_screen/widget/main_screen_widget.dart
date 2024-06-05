@@ -9,9 +9,10 @@ import 'package:the_movies_expore/src/presentation/common/big_header_text.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/theme.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/cubit/main_screen_cubit.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/cubit/main_screen_state.dart';
-import 'package:the_movies_expore/src/presentation/common/movies_grid_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list_widget.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/widget/carousel_movies_widget.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
 
@@ -50,6 +51,9 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         final carouselMovies =
             topMovies.sublist(0, min(topMovies.length, _carouselLength));
 
+        final isLatestMoviesLoading = latestMovies.isEmpty;
+        final isTopScreenMoviesLoading = carouselMovies.isEmpty;
+
         return RefreshIndicator(
           onRefresh: onPageRefresh,
           child: ScrollUpButtonWidget(
@@ -68,7 +72,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                         onBookmarkClick: onBookmarkClick,
                         onMovieClick: onCardClick,
                         movies: movies,
-                        isLoading: carouselMovies.isEmpty,
+                        isLoading: isTopScreenMoviesLoading,
                       ),
                     ),
                   ),
@@ -80,16 +84,20 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                       title: BigHeaderText(context.localizations.popular),
                     ),
                   ),
-                  sliver: SliverToBoxAdapter(
-                    child: BookmarksMoviesWrapperBuilder(
-                      movies: latestMovies,
-                      builder: (movies) => MoviesGridWidget(
-                        onBookmarkClick: onBookmarkClick,
-                        onMovieClick: onCardClick,
-                        movies: movies,
-                        isLoading: latestMovies.isEmpty,
-                      ),
+                  sliver: SliverPadding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: defaultHorizontalPadding,
                     ),
+                    sliver: isLatestMoviesLoading
+                        ? const MovieListWidget.shimmer(shimmerCount: 3)
+                        : BookmarksMoviesWrapperBuilder(
+                            movies: latestMovies,
+                            builder: (movies) => MovieListWidget(
+                              onBookmarkClick: onBookmarkClick,
+                              onMovieClick: onCardClick,
+                              movies: movies,
+                            ),
+                          ),
                   ),
                 ),
               ],
