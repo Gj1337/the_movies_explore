@@ -5,5 +5,7 @@
   "bookmakrs": "Bookmarks",
   "readMore": "Read more",
   "seeMore": "SEE MORE",
-  "searchResult": "Search result ({count})"
+  "searchResult": "Search result ({count})",
+  "showMore": "Show more",
+  "showLess": "Show less"
 }

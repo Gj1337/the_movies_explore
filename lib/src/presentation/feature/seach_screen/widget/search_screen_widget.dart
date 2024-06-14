@@ -46,6 +46,7 @@ class SearchScreenWidget extends StatelessWidget {
               builder: (scrollController) => ScrollUpButtonWidget(
                 scrollController: scrollController,
                 child: CustomScrollView(
+                  cacheExtent: 1500,
                   controller: scrollController,
                   slivers: [
                     SliverToBoxAdapter(

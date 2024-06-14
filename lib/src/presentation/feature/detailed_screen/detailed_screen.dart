@@ -1,3 +1,4 @@
+import 'package:animated_read_more_text/animated_read_more_text.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -8,6 +9,7 @@ import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookma
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/common/theme.dart';
 import 'package:the_movies_expore/src/presentation/feature/detailed_screen/movie_header.dart';
+import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
 
 class DetailedScreen extends StatelessWidget {
   const DetailedScreen({
@@ -83,9 +85,13 @@ class DetailedScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(
                   horizontal: defaultHorizontalPadding,
                 ),
-                child: Text(
+                child: AnimatedReadMoreText(
                   movie.overview,
-                  style: overviewMovieTextStyle,
+                  expandOnTextTap: false,
+                  textStyle: overviewMovieTextStyle,
+                  readMoreText: context.localizations.showMore,
+                  readLessText: context.localizations.showLess,
+                  buttonTextStyle: linkTextStyle,
                 )),
           ),
         ],
