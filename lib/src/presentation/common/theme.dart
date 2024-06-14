@@ -87,3 +87,9 @@ final serchTextStyle = GoogleFonts.poppins(
   fontSize: 18,
   fontWeight: FontWeight.w500,
 );
+
+final linkTextStyle = GoogleFonts.poppins(
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+  color: _mainColor,
+);

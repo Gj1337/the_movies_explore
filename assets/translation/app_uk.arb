@@ -5,5 +5,7 @@
   "bookmakrs": "Закладки",
   "readMore": "Читати далі",
   "seeMore": "Більше",
-  "searchResult": "Результат пошуку ({count})"
+  "searchResult": "Результат пошуку ({count})",
+  "showMore": "Показати більше",
+  "showLess": "Згорнути"
 }

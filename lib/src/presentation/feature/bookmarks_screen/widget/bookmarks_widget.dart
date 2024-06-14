@@ -47,6 +47,7 @@ class _BookmarksWidgetState extends State<BookmarksWidget> {
                 horizontal: defaultHorizontalPadding,
               ),
               child: CustomScrollView(
+                cacheExtent: 1500,
                 controller: scrollController,
                 slivers: [
                   MovieListWidget(

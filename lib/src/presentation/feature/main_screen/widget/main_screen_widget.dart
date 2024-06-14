@@ -59,6 +59,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           child: ScrollUpButtonWidget(
             scrollController: scrollController,
             child: CustomScrollView(
+              cacheExtent: 1500,
               controller: scrollController,
               slivers: [
                 SliverStickyHeader(
