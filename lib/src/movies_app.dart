@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:the_movies_expore/src/di/dependency_injection.config.dart';
@@ -21,34 +22,38 @@ class MoviesApp extends StatelessWidget {
   const MoviesApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return DiProvider(
-      getIt: GetIt.instance,
-      setupGetIt: init,
-      child: MaterialApp.router(
-        builder: (context, child) {
-          final bookmarksCubit = context.getIt.get<BookmarksCubit>()
-            ..onCreate();
+  Widget build(BuildContext context) => DiProvider(
+        getIt: GetIt.instance,
+        setupGetIt: _setUpDi,
+        child: MaterialApp.router(
+          builder: (context, child) {
+            final bookmarksCubit = context.getIt.get<BookmarksCubit>()
+              ..onCreate();
 
-          return BlocProvider<BookmarksCubit>(
-            lazy: false,
-            create: (_) => bookmarksCubit,
-            child: child,
-          );
-        },
-        routerConfig: _router,
-        theme: theme,
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('en', ''),
-          Locale('uk', ''),
-        ],
-      ),
-    );
-  }
+            return BlocProvider<BookmarksCubit>(
+              lazy: false,
+              create: (_) => bookmarksCubit,
+              child: child,
+            );
+          },
+          routerConfig: _router,
+          theme: theme,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          supportedLocales: const [
+            Locale('en', ''),
+            Locale('uk', ''),
+          ],
+        ),
+      );
+}
+
+Future<void> _setUpDi(GetIt getIt) async {
+  await init(getIt);
+
+  FlutterNativeSplash.remove();
 }

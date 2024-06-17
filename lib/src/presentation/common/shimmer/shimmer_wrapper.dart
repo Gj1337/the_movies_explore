@@ -3,8 +3,8 @@ import 'package:shimmer/shimmer.dart';
 
 class ShimmerWrapper extends StatelessWidget {
   const ShimmerWrapper({
-    super.key,
     required this.child,
+    super.key,
   });
 
   final Widget child;

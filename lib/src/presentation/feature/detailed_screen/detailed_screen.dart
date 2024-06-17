@@ -13,8 +13,8 @@ import 'package:the_movies_expore/src/presentation/utils/localization_extension.
 
 class DetailedScreen extends StatelessWidget {
   const DetailedScreen({
-    super.key,
     required this.movie,
+    super.key,
   });
 
   final Movie movie;
@@ -36,8 +36,9 @@ class DetailedScreen extends StatelessWidget {
               expandedHeight: 550,
               actions: [
                 IconButton(
-                    onPressed: () => Share.shareUri(Uri.parse(movie.webUrl)),
-                    icon: const Icon(Icons.share)),
+                  onPressed: () => Share.shareUri(Uri.parse(movie.webUrl)),
+                  icon: const Icon(Icons.share),
+                ),
                 BookmarkButtonWidget(
                   inBookmarks: movie.isBookmarked,
                   onPressed: () => context
@@ -82,17 +83,18 @@ class DetailedScreen extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: defaultHorizontalPadding,
-                ),
-                child: AnimatedReadMoreText(
-                  movie.overview,
-                  expandOnTextTap: false,
-                  textStyle: overviewMovieTextStyle,
-                  readMoreText: context.localizations.showMore,
-                  readLessText: context.localizations.showLess,
-                  buttonTextStyle: linkTextStyle,
-                )),
+              padding: const EdgeInsets.symmetric(
+                horizontal: defaultHorizontalPadding,
+              ),
+              child: AnimatedReadMoreText(
+                movie.overview,
+                expandOnTextTap: false,
+                textStyle: overviewMovieTextStyle,
+                readMoreText: context.localizations.showMore,
+                readLessText: context.localizations.showLess,
+                buttonTextStyle: linkTextStyle,
+              ),
+            ),
           ),
         ],
       ),

@@ -3,10 +3,10 @@ import 'package:get_it/get_it.dart';
 
 class DiProvider extends StatefulWidget {
   const DiProvider({
-    super.key,
     required this.child,
     required this.getIt,
     required this.setupGetIt,
+    super.key,
   });
 
   final GetIt getIt;
@@ -22,22 +22,20 @@ class DiProvider extends StatefulWidget {
 
 class _DiProviderState extends State<DiProvider> {
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-      future: widget.setupGetIt.call(widget.getIt),
-      builder: (_, asyncSnapshot) => switch (asyncSnapshot.connectionState) {
-        ConnectionState.none ||
-        ConnectionState.waiting ||
-        ConnectionState.active =>
-          //TODO: add spash screen
-          const SizedBox(),
-        ConnectionState.done => _DiProvider(
-            getIt: widget.getIt,
-            child: widget.child,
-          )
-      },
-    );
-  }
+  Widget build(BuildContext context) => FutureBuilder(
+        future: widget.setupGetIt.call(widget.getIt),
+        builder: (_, asyncSnapshot) => switch (asyncSnapshot.connectionState) {
+          ConnectionState.none ||
+          ConnectionState.waiting ||
+          ConnectionState.active =>
+            //TODO: add spash screen
+            const SizedBox(),
+          ConnectionState.done => _DiProvider(
+              getIt: widget.getIt,
+              child: widget.child,
+            )
+        },
+      );
 }
 
 class _DiProvider extends InheritedWidget {

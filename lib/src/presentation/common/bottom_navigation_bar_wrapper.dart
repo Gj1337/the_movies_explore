@@ -6,8 +6,8 @@ import 'package:the_movies_expore/src/presentation/utils/animation_speed.dart';
 
 class BottomNavigationBarWrapper extends StatelessWidget {
   const BottomNavigationBarWrapper({
-    super.key,
     required this.child,
+    super.key,
   });
 
   final StatefulNavigationShell child;

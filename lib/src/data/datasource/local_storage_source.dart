@@ -74,15 +74,24 @@ final class LocalStorageSource {
       _getPaginationMovieListResponse(_formatBookmaredRatedKey(page));
 
   void putTopRatedMovies(
-          PaginationMovieListResponse paginationMovieListResponse) =>
-      _putPaginationMovieListResponse(paginationMovieListResponse,
-          _formatTopRatedKey(paginationMovieListResponse.page));
+    PaginationMovieListResponse paginationMovieListResponse,
+  ) =>
+      _putPaginationMovieListResponse(
+        paginationMovieListResponse,
+        _formatTopRatedKey(paginationMovieListResponse.page),
+      );
   void putLatestMovies(
-          PaginationMovieListResponse paginationMovieListResponse) =>
-      _putPaginationMovieListResponse(paginationMovieListResponse,
-          _formatLatestRatedKey(paginationMovieListResponse.page));
+    PaginationMovieListResponse paginationMovieListResponse,
+  ) =>
+      _putPaginationMovieListResponse(
+        paginationMovieListResponse,
+        _formatLatestRatedKey(paginationMovieListResponse.page),
+      );
   void putBookmaredMovies(
-          PaginationMovieListResponse paginationMovieListResponse) =>
-      _putPaginationMovieListResponse(paginationMovieListResponse,
-          _formatBookmaredRatedKey(paginationMovieListResponse.page));
+    PaginationMovieListResponse paginationMovieListResponse,
+  ) =>
+      _putPaginationMovieListResponse(
+        paginationMovieListResponse,
+        _formatBookmaredRatedKey(paginationMovieListResponse.page),
+      );
 }

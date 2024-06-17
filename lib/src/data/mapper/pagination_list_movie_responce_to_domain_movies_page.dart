@@ -23,8 +23,10 @@ final class PaginationListMovieResponceToDomainMoviesPage {
         networkGenreList.map(_networkGenreToDomainGenre.call).toList();
 
     final domainMovies = paginationListMovieResponce.results
-        .map((networkMovie) =>
-            _networkMovieToDomainMovie.call(networkMovie, domainGenreList))
+        .map(
+          (networkMovie) =>
+              _networkMovieToDomainMovie.call(networkMovie, domainGenreList),
+        )
         .toList();
 
     return MoviesPage(

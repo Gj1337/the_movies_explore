@@ -29,18 +29,18 @@ abstract class NetworkDataSource {
   @GET('/search/movie')
   Future<PaginationMovieListResponse> searchMovie({
     @Query('query') required String query,
-    @Query('include_adult') bool includeAdult = false,
     @Query('language') required String language,
     @Query('page') required int page,
+    @Query('include_adult') bool includeAdult = false,
   });
 
   @GET('/discover/movie')
   Future<PaginationMovieListResponse> discoverMovies({
-    @Query('include_adult') bool includeAdult = false,
-    @Query('include_video') bool includeVideo = false,
     @Query('language') required String language,
     @Query('page') required int page,
     @Query('primary_release_date.lte') required String primaryReleaseDate,
+    @Query('include_adult') bool includeAdult = false,
+    @Query('include_video') bool includeVideo = false,
   });
 
   @GET('/genre/movie/list')

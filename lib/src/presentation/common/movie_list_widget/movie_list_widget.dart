@@ -16,10 +16,11 @@ enum _MovieListType {
 class MovieListWidget extends StatelessWidget {
   ///This widget has to be inside CustomScrollView
   const MovieListWidget({
-    super.key,
     required this.movies,
+    super.key,
     this.onMovieClick,
     this.onBookmarkClick,
+    this.cacheImages = false,
   })  : _moviesListType = _MovieListType.animatedMoviesList,
         shimmerCount = null;
 
@@ -29,11 +30,13 @@ class MovieListWidget extends StatelessWidget {
   })  : _moviesListType = _MovieListType.moviesListShimmer,
         movies = const [],
         onBookmarkClick = null,
-        onMovieClick = null;
+        onMovieClick = null,
+        cacheImages = false;
 
   final _MovieListType _moviesListType;
 
   final List<Movie> movies;
+  final bool cacheImages;
   final void Function(Movie movie)? onMovieClick;
   final void Function(Movie movie)? onBookmarkClick;
   final int? shimmerCount;
@@ -45,6 +48,7 @@ class MovieListWidget extends StatelessWidget {
             movies: movies,
             onBookmarkClick: onBookmarkClick,
             onMovieClick: onMovieClick,
+            cacheImages: cacheImages,
           ),
         _MovieListType.moviesListShimmer => _MovieListShimmer(
             key: key,

@@ -9,15 +9,14 @@ class _MovieListShimmer extends StatelessWidget {
   final int? shimmersCount;
 
   @override
-  Widget build(BuildContext context) {
-    return SliverList(
-      delegate: SliverChildBuilderDelegate(
-        (context, int index) => const Padding(
-          padding: EdgeInsets.symmetric(vertical: defaultHorizontalPadding / 2),
-          child: MovieCard.wideMovieCardShimmer(),
+  Widget build(BuildContext context) => SliverList(
+        delegate: SliverChildBuilderDelegate(
+          (context, int index) => const Padding(
+            padding:
+                EdgeInsets.symmetric(vertical: defaultHorizontalPadding / 2),
+            child: MovieCard.wideMovieCardShimmer(),
+          ),
+          childCount: shimmersCount,
         ),
-        childCount: shimmersCount,
-      ),
-    );
-  }
+      );
 }
