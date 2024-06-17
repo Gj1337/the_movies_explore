@@ -4,20 +4,18 @@ import 'package:the_movies_expore/src/presentation/utils/localization_extension.
 
 class SearchResultCount extends StatelessWidget {
   const SearchResultCount({
-    super.key,
     required this.count,
+    super.key,
   });
 
   final int count;
 
   @override
-  Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Text(
-        context.localizations.searchResult(count),
-        style: serchTextStyle,
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          context.localizations.searchResult(count),
+          style: serchTextStyle,
+        ),
+      );
 }

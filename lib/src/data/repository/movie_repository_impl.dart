@@ -167,10 +167,11 @@ final class MovieRepositoryImpl implements MovieRepository {
     final newBookmakrsMovies = [...savedBookmakrsMovies, networkMovie];
 
     final a = PaginationMovieListResponse(
-        page: 1,
-        totalResults: newBookmakrsMovies.length,
-        totalPages: 1,
-        results: newBookmakrsMovies);
+      page: 1,
+      totalResults: newBookmakrsMovies.length,
+      totalPages: 1,
+      results: newBookmakrsMovies,
+    );
 
     _localStorageSource.putBookmaredMovies(a);
 
@@ -205,7 +206,9 @@ final class MovieRepositoryImpl implements MovieRepository {
         _localStorageSource.getGenresResponse()?.genres ?? [];
 
     final moviePage = _paginationListMovieResponceToDomainMoviesPage(
-        newBookmakrsMovies, genresResponse);
+      newBookmakrsMovies,
+      genresResponse,
+    );
 
     _bookmarkedMoviesStreamController.add(moviePage);
   }

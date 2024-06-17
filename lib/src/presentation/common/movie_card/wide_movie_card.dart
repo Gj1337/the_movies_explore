@@ -4,13 +4,15 @@ const _wideCardPictureSize = Size(182, 359);
 
 class _WideMovieCard extends StatelessWidget {
   const _WideMovieCard({
-    super.key,
     required this.movie,
     this.onCardClick,
     this.onBookmarkClick,
+    this.cacheImage = false,
+    super.key,
   });
 
   final Movie movie;
+  final bool cacheImage;
   final VoidCallback? onCardClick;
   final VoidCallback? onBookmarkClick;
 
@@ -33,6 +35,7 @@ class _WideMovieCard extends StatelessWidget {
                   width: 182,
                   height: 359,
                   child: MovieImage(
+                    isCaching: cacheImage,
                     imageUrl: movie.posterPath ?? '',
                     memCacheWidth: _wideCardPictureSize.width.toInt() * 2,
                   ),
@@ -86,7 +89,7 @@ class _WideMovieCard extends StatelessWidget {
                 inBookmarks: movie.isBookmarked,
                 onPressed: onBookmarkClick,
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -9,8 +9,8 @@ const _maxRate = 5;
 
 class MovieWideRateWidget extends StatelessWidget {
   const MovieWideRateWidget({
-    super.key,
     required this.rate,
+    super.key,
   });
 
   final double rate;

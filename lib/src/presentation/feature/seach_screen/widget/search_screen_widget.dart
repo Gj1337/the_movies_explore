@@ -22,71 +22,69 @@ class SearchScreenWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final language = Localizations.localeOf(context).languageCode;
 
-    onCardClick(movie) => context.pushNamed(
+    Future<Object?> onCardClick(movie) => context.pushNamed(
           Routes.detailedScreen.name,
           extra: movie,
         );
 
-    onBookmarkClick(movie) =>
+    Future<void> onBookmarkClick(movie) =>
         context.read<BookmarksCubit>().changeBookmarkStatus(movie);
 
     return BlocBuilder<SearchSreenCubit, SearchSreenState>(
-      builder: (context, state) {
-        return Scaffold(
-          appBar: AppBar(
-            title: BigHeaderText(context.localizations.search),
+      builder: (context, state) => Scaffold(
+        appBar: AppBar(
+          title: BigHeaderText(context.localizations.search),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: defaultHorizontalPadding,
           ),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: defaultHorizontalPadding,
-            ),
-            child: ScrollUpdateWidget(
-              onGetBorder: context.read<SearchSreenCubit>().uploadMore,
-              border: 70,
-              builder: (scrollController) => ScrollUpButtonWidget(
-                scrollController: scrollController,
-                child: CustomScrollView(
-                  cacheExtent: 1500,
-                  controller: scrollController,
-                  slivers: [
-                    SliverToBoxAdapter(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          SearchLineWidget(
-                            onTextChanged: (text) =>
-                                context.read<SearchSreenCubit>().searchMovies(
-                                      name: text,
-                                      language: language,
-                                    ),
+          child: ScrollUpdateWidget(
+            onGetBorder: context.read<SearchSreenCubit>().uploadMore,
+            border: 70,
+            builder: (scrollController) => ScrollUpButtonWidget(
+              scrollController: scrollController,
+              child: CustomScrollView(
+                cacheExtent: 1500,
+                controller: scrollController,
+                slivers: [
+                  SliverToBoxAdapter(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        SearchLineWidget(
+                          onTextChanged: (text) =>
+                              context.read<SearchSreenCubit>().searchMovies(
+                                    name: text,
+                                    language: language,
+                                  ),
+                        ),
+                        const SizedBox(height: defaultHorizontalPadding),
+                        if (state.totalResult != null)
+                          SearchResultCount(
+                            count: state.totalResult ?? 0,
                           ),
-                          const SizedBox(height: defaultHorizontalPadding),
-                          if (state.totalResult != null)
-                            SearchResultCount(
-                              count: state.totalResult ?? 0,
-                            ),
-                          const SizedBox(height: defaultHorizontalPadding),
-                          if (state.isLoading)
-                            const Center(child: LinearProgressIndicator()),
-                        ],
+                        const SizedBox(height: defaultHorizontalPadding),
+                        if (state.isLoading)
+                          const Center(child: LinearProgressIndicator()),
+                      ],
+                    ),
+                  ),
+                  if (!state.isLoading)
+                    BookmarksMoviesWrapperBuilder(
+                      movies: state.foundedMovies ?? [],
+                      builder: (movies) => MovieListWidget(
+                        movies: movies,
+                        onMovieClick: onCardClick,
+                        onBookmarkClick: onBookmarkClick,
                       ),
                     ),
-                    if (!state.isLoading)
-                      BookmarksMoviesWrapperBuilder(
-                        movies: state.foundedMovies ?? [],
-                        builder: (movies) => MovieListWidget(
-                          movies: movies,
-                          onMovieClick: onCardClick,
-                          onBookmarkClick: onBookmarkClick,
-                        ),
-                      ),
-                  ],
-                ),
+                ],
               ),
             ),
           ),
-        );
-      },
+        ),
+      ),
     );
   }
 }

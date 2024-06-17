@@ -23,12 +23,12 @@ class _BookmarksWidgetState extends State<BookmarksWidget> {
 
   @override
   Widget build(BuildContext context) {
-    onCardClick(movie) => context.pushNamed(
+    Future<Object?> onCardClick(movie) => context.pushNamed(
           Routes.detailedScreen.name,
           extra: movie,
         );
 
-    onBookmarkClick(movie) =>
+    Future<void> onBookmarkClick(movie) =>
         context.read<BookmarksCubit>().changeBookmarkStatus(movie);
 
     return Scaffold(
@@ -54,6 +54,7 @@ class _BookmarksWidgetState extends State<BookmarksWidget> {
                     onBookmarkClick: onBookmarkClick,
                     onMovieClick: onCardClick,
                     movies: movies,
+                    cacheImages: true,
                   ),
                 ],
               ),

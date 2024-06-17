@@ -10,20 +10,18 @@ class BigHeaderText extends StatelessWidget {
   final String text;
 
   @override
-  Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        text: text,
-        style: bigHeaderTextStyle,
-        children: [
-          TextSpan(
-            text: '.',
-            style: bigHeaderTextStyle.copyWith(
-              color: Theme.of(context).colorScheme.primary,
+  Widget build(BuildContext context) => RichText(
+        text: TextSpan(
+          text: text,
+          style: bigHeaderTextStyle,
+          children: [
+            TextSpan(
+              text: '.',
+              style: bigHeaderTextStyle.copyWith(
+                color: Theme.of(context).colorScheme.primary,
+              ),
             ),
-          ),
-        ],
-      ),
-    );
-  }
+          ],
+        ),
+      );
 }

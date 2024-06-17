@@ -15,22 +15,20 @@ class BookmarkButtonWidget extends StatelessWidget {
   final bool inBookmarks;
 
   @override
-  Widget build(BuildContext context) {
-    return IconButton(
-      onPressed: () {
-        onPressed?.call();
+  Widget build(BuildContext context) => IconButton(
+        onPressed: () {
+          onPressed?.call();
 
-        HapticFeedback.lightImpact();
-      },
-      icon: AnimatedSwitcher(
-        duration: AnimationSpeed.fast.duration,
-        child: SvgPicture.asset(
-          key: ValueKey(inBookmarks),
-          inBookmarks ? bookmarkActiveImage : bookMarkDefaultImage,
-          width: 24,
-          height: 24,
+          HapticFeedback.lightImpact();
+        },
+        icon: AnimatedSwitcher(
+          duration: AnimationSpeed.fast.duration,
+          child: SvgPicture.asset(
+            key: ValueKey(inBookmarks),
+            inBookmarks ? bookmarkActiveImage : bookMarkDefaultImage,
+            width: 24,
+            height: 24,
+          ),
         ),
-      ),
-    );
-  }
+      );
 }

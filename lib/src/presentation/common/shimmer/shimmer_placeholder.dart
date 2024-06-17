@@ -11,11 +11,10 @@ class ShimmerPlaceholder extends StatelessWidget {
   final double height;
 
   @override
-  Widget build(BuildContext context) {
-    return Card(
+  Widget build(BuildContext context) => Card(
         child: SizedBox(
-      width: width,
-      height: height,
-    ));
-  }
+          width: width,
+          height: height,
+        ),
+      );
 }

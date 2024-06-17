@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class ScrollUpdateWidget extends StatefulWidget {
   const ScrollUpdateWidget({
-    super.key,
     required this.builder,
+    super.key,
     this.border = 100,
     this.onGetBorder,
     this.scrollController,
@@ -51,9 +51,7 @@ class _ScrollUpdateWidgetState extends State<ScrollUpdateWidget> {
   }
 
   @override
-  Widget build(BuildContext context) {
-    return widget.builder(_scrollController);
-  }
+  Widget build(BuildContext context) => widget.builder(_scrollController);
 
   @override
   void dispose() {

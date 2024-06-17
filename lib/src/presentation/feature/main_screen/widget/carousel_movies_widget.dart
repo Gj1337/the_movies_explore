@@ -8,14 +8,16 @@ const _height = 275.0;
 
 class CarouselMoviesWidget extends StatelessWidget {
   const CarouselMoviesWidget({
-    super.key,
     required this.movies,
+    super.key,
     this.isLoading = false,
     this.onMovieClick,
     this.onBookmarkClick,
+    this.cacheImage = false,
   });
 
   final List<Movie> movies;
+  final bool cacheImage;
   final void Function(Movie movie)? onMovieClick;
   final void Function(Movie movie)? onBookmarkClick;
   final bool isLoading;
@@ -28,6 +30,7 @@ class CarouselMoviesWidget extends StatelessWidget {
             .map(
               (movie) => MovieCard.bitPicture(
                 movie,
+                cacheImage: cacheImage,
                 onBookmarkClick: () => onBookmarkClick?.call(movie),
                 onCardClick: () => onMovieClick?.call(movie),
               ),

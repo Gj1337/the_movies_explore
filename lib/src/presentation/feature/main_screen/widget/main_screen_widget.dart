@@ -30,15 +30,15 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
-    onCardClick(movie) => context.pushNamed(
+    Future<Object?> onCardClick(movie) => context.pushNamed(
           Routes.detailedScreen.name,
           extra: movie,
         );
 
-    onBookmarkClick(movie) =>
+    Future<void> onBookmarkClick(movie) =>
         context.read<BookmarksCubit>().changeBookmarkStatus(movie);
 
-    onPageRefresh() {
+    Future<void> onPageRefresh() {
       final language = Localizations.localeOf(context).languageCode;
 
       return context.read<MainScreenCubit>().onPageRefresh(language);
@@ -65,7 +65,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                 SliverStickyHeader(
                   sticky: false,
                   header: AppBar(
-                      title: BigHeaderText(context.localizations.topTen)),
+                    title: BigHeaderText(context.localizations.topTen),
+                  ),
                   sliver: SliverToBoxAdapter(
                     child: BookmarksMoviesWrapperBuilder(
                       movies: carouselMovies,
@@ -74,6 +75,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                         onMovieClick: onCardClick,
                         movies: movies,
                         isLoading: isTopScreenMoviesLoading,
+                        cacheImage: true,
                       ),
                     ),
                   ),
@@ -97,6 +99,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                               onBookmarkClick: onBookmarkClick,
                               onMovieClick: onCardClick,
                               movies: movies,
+                              cacheImages: true,
                             ),
                           ),
                   ),

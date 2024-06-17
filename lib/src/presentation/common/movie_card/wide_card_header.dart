@@ -5,8 +5,8 @@ import 'package:the_movies_expore/src/presentation/common/theme.dart';
 
 class WideCardHeader extends StatelessWidget {
   const WideCardHeader({
-    super.key,
     required this.movie,
+    super.key,
   });
 
   final Movie movie;

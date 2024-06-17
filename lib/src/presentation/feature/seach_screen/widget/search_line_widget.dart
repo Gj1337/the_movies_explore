@@ -12,29 +12,27 @@ class SearchLineWidget extends StatelessWidget {
   final void Function(String text)? onTextChanged;
 
   @override
-  Widget build(BuildContext context) {
-    return TextField(
-      autofocus: true,
-      decoration: InputDecoration(
-        filled: true,
-        fillColor: const Color(0xFF2b2b2b),
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        hintText: context.localizations.search,
-        hintStyle: serchTextStyle,
-        prefixIcon: Container(
-          alignment: Alignment.center,
-          width: 20,
-          height: 20,
-          child: SvgPicture.asset(
-            searchDeafultImage,
+  Widget build(BuildContext context) => TextField(
+        autofocus: true,
+        decoration: InputDecoration(
+          filled: true,
+          fillColor: const Color(0xFF2b2b2b),
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          hintText: context.localizations.search,
+          hintStyle: serchTextStyle,
+          prefixIcon: Container(
+            alignment: Alignment.center,
+            width: 20,
+            height: 20,
+            child: SvgPicture.asset(
+              searchDeafultImage,
+            ),
           ),
         ),
-      ),
-      textInputAction: TextInputAction.search,
-      onSubmitted: onTextChanged?.call,
-    );
-  }
+        textInputAction: TextInputAction.search,
+        onSubmitted: onTextChanged?.call,
+      );
 }

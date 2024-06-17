@@ -21,11 +21,12 @@ final theme = ThemeData.dark().copyWith(
     height: 70,
   ),
   appBarTheme: const AppBarTheme(
-      surfaceTintColor: Colors.transparent,
-      toolbarHeight: 90,
-      centerTitle: false,
-      backgroundColor: _backgroundColor,
-      iconTheme: IconThemeData(color: _mainColor)),
+    surfaceTintColor: Colors.transparent,
+    toolbarHeight: 90,
+    centerTitle: false,
+    backgroundColor: _backgroundColor,
+    iconTheme: IconThemeData(color: _mainColor),
+  ),
   scaffoldBackgroundColor: _backgroundColor,
   bottomNavigationBarTheme: const BottomNavigationBarThemeData(
     backgroundColor: _navigationAppBarColor,

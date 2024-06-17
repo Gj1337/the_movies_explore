@@ -5,9 +5,7 @@ class BookmarksScreen extends StatelessWidget {
   const BookmarksScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const SafeArea(
-      child: BookmarksWidget(),
-    );
-  }
+  Widget build(BuildContext context) => const SafeArea(
+        child: BookmarksWidget(),
+      );
 }
