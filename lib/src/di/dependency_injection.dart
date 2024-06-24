@@ -6,4 +6,4 @@ import 'package:the_movies_expore/src/di/dependency_injection.config.dart';
   preferRelativeImports: false,
   asExtension: false,
 )
-void createDependencyContainer(GetIt getIt) async => init(getIt);
+Future<void> initializeDependencyContainer(GetIt getIt) async => init(getIt);
