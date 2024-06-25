@@ -28,7 +28,6 @@ class _DiProviderState extends State<DiProvider> {
           ConnectionState.none ||
           ConnectionState.waiting ||
           ConnectionState.active =>
-            //TODO: add spash screen
             const SizedBox(),
           ConnectionState.done => _DiProvider(
               getIt: widget.getIt,
