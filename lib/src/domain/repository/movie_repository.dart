@@ -1,3 +1,4 @@
+import 'package:the_movies_expore/src/domain/entity/detailed_movie.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/domain/entity/movies_page.dart';
 
@@ -21,6 +22,8 @@ abstract interface class MovieRepository {
     required String language,
     int page = 1,
   });
+
+  Future<DetailedMovie> getDetailedMovie({required int id});
 
   Stream<MoviesPage> bookmarkMoviesStream();
 

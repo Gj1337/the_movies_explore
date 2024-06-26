@@ -14,7 +14,11 @@ flutter pub get && dart run build_runner build
 
 Also this project uses environment params for passing **API Read Access Token**, please pass your **API Read Access Token** by env.param with name ApiReadAccessToken.
 
+
+
 For example
 ```
     flutter run --dart-define=ApiReadAccessToken=Your API Read Access Token
 ```
+
+The **API Read Access Token** can be gained [here](https://developer.themoviedb.org/docs/getting-started).

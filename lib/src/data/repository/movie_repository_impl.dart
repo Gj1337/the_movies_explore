@@ -7,7 +7,9 @@ import 'package:the_movies_expore/src/data/datasource/network_data_source.dart';
 import 'package:the_movies_expore/src/data/entity/network_responce/genres_response.dart';
 import 'package:the_movies_expore/src/data/entity/network_responce/pagination_list_movie_responce.dart';
 import 'package:the_movies_expore/src/data/mapper/domain_movie_to_network_movie.dart';
+import 'package:the_movies_expore/src/data/mapper/network_detailed_movie_to_domain_detailed_movie.dart';
 import 'package:the_movies_expore/src/data/mapper/pagination_list_movie_responce_to_domain_movies_page.dart';
+import 'package:the_movies_expore/src/domain/entity/detailed_movie.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/domain/entity/movies_page.dart';
 import 'package:the_movies_expore/src/domain/repository/movie_repository.dart';
@@ -19,6 +21,7 @@ final class MovieRepositoryImpl implements MovieRepository {
     this._paginationListMovieResponceToDomainMoviesPage,
     this._localStorageSource,
     this._domainMovieToNetworkMovie,
+    this._networkDetailedMovieToDomainDetailedMovie,
   );
 
   final NetworkDataSource _networkDataSource;
@@ -27,6 +30,8 @@ final class MovieRepositoryImpl implements MovieRepository {
   final PaginationListMovieResponceToDomainMoviesPage
       _paginationListMovieResponceToDomainMoviesPage;
   final DomainMovieToNetworkMovie _domainMovieToNetworkMovie;
+  final NetworkDetailedMovieToDomainDetailedMovie
+      _networkDetailedMovieToDomainDetailedMovie;
 
   final _popularMoviesStreamController =
       StreamController<MoviesPage>.broadcast();
@@ -211,5 +216,18 @@ final class MovieRepositoryImpl implements MovieRepository {
     );
 
     _bookmarkedMoviesStreamController.add(moviePage);
+  }
+
+  @override
+  Future<DetailedMovie> getDetailedMovie({
+    required int id,
+  }) async {
+    final newtorkDetailedMovie = await _networkDataSource.getDetailsMovie(id);
+
+    final domainDetailedMovie = _networkDetailedMovieToDomainDetailedMovie(
+      newtorkDetailedMovie,
+    );
+
+    return domainDetailedMovie;
   }
 }
