@@ -1,0 +1,32 @@
+name: Lint
+run-name: ${{ github.actor }} Lint
+
+on:
+  pull_request:
+    branches:
+      - main
+
+env:
+  FLUTTER_VERSION: 3.22.3
+
+jobs:
+  Analyzis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+  
+      - name: Flutter info
+        run: flutter --version && flutter pub get
+
+      - name: Codogen
+        run: dart run build_runner build
+
+      - name: Lint
+        run: dart format --set-exit-if-changed . && dart analyze . 
