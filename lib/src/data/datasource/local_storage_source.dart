@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:injectable/injectable.dart';
-import 'package:the_movies_expore/src/data/entity/network_responce/genres_response.dart';
-import 'package:the_movies_expore/src/data/entity/network_responce/pagination_list_movie_responce.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/responces/genres_response.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/responces/pagination_list_movie_responce.dart';
 
 typedef JSON = Map<String, dynamic>;
 

@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:the_movies_expore/src/data/entity/network_production_company.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_production_company.dart';
 import 'package:the_movies_expore/src/domain/entity/production_company.dart';
 
 @injectable
