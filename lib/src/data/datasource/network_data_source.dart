@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:retrofit/http.dart';
 import 'package:the_movies_expore/src/data/entity/network_detailed_movie.dart';
 import 'package:the_movies_expore/src/data/entity/network_responce/genres_response.dart';
 import 'package:the_movies_expore/src/data/entity/network_responce/pagination_list_movie_responce.dart';
