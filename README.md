@@ -1,4 +1,4 @@
-# The movies explore
+# The Movies Explore
 
 <div align="center">
 	<img src="doc/example.gif" width="300"/>
