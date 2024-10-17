@@ -6,7 +6,7 @@
 
 
 ### Setup
-This project uses codogeneration, but generated files **AREN'T** pushed to repository, you have generated them yourself by next command 
+This project uses codogeneration, but generated files **AREN'T** pushed to repository, you have generate them yourself by next command 
 
 ```
 flutter pub get && dart run build_runner build

@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:the_movies_expore/src/data/config.dart';
-import 'package:the_movies_expore/src/data/entity/network_detailed_movie.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_detailed_movie.dart';
 import 'package:the_movies_expore/src/data/mapper/network_genre_to_domain_genre.dart';
 import 'package:the_movies_expore/src/data/mapper/network_movies_collection_to_domain_movies_collection.dart';
 import 'package:the_movies_expore/src/data/mapper/network_spoken_language_to_domain_spoken_language.dart';
@@ -23,7 +23,7 @@ final class NetworkDetailedMovieToDomainDetailedMovie {
       _networkMoviesCollectionToDomainMoviesCollection;
   final NetworkProductionCompanyToDomainProductionCompany
       _networkProductionCompanyToDomainProductionCompany;
-  final NewtorkProductionCountryToDomainProductionCountry
+  final NetworkProductionCountryToDomainProductionCountry
       _newtorkProductionCountryToDomainProductionCountiry;
   final NetworkSpokenLanguageToDomainSpokenLanguage
       _networkSpokenLanguageToDomainSpokenLanguage;
