@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
-import 'package:the_movies_expore/src/data/entity/network_genre.dart';
-import 'package:the_movies_expore/src/data/entity/network_responce/pagination_list_movie_responce.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_genre.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/responces/pagination_list_movie_responce.dart';
 import 'package:the_movies_expore/src/data/mapper/network_genre_to_domain_genre.dart';
 import 'package:the_movies_expore/src/data/mapper/network_movie_to_domain_movie.dart';
 import 'package:the_movies_expore/src/domain/entity/movies_page.dart';

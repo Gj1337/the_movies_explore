@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:the_movies_expore/src/data/entity/network_movies_collection.dart';
-import 'package:the_movies_expore/src/data/entity/network_genre.dart';
-import 'package:the_movies_expore/src/data/entity/network_production_company.dart';
-import 'package:the_movies_expore/src/data/entity/network_production_country.dart';
-import 'package:the_movies_expore/src/data/entity/network_spoken_language.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_genre.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_movies_collection.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_production_company.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_production_country.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_spoken_language.dart';
 
 part 'network_detailed_movie.freezed.dart';
 part 'network_detailed_movie.g.dart';

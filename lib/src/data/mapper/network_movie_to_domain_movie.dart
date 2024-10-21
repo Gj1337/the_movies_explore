@@ -1,6 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:the_movies_expore/src/data/config.dart';
-import 'package:the_movies_expore/src/data/entity/network_movie.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_movie.dart';
 import 'package:the_movies_expore/src/domain/entity/genre.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
 

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:the_movies_expore/src/data/entity/network_movie.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_movie.dart';
 
 part 'pagination_list_movie_responce.freezed.dart';
 part 'pagination_list_movie_responce.g.dart';
