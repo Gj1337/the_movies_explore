@@ -20,9 +20,9 @@ class _BigPictureMovieCardShimmer extends StatelessWidget {
               const SizedBox(height: 12),
               const Row(
                 children: [
-                  ShimmerPlaceholder(width: 33, height: 24),
+                  Flexible(child: ShimmerPlaceholder(width: 33, height: 24)),
                   SizedBox(width: 4),
-                  ShimmerPlaceholder(width: 120, height: 24),
+                  Flexible(child: ShimmerPlaceholder(width: 120, height: 24)),
                 ],
               ),
             ],

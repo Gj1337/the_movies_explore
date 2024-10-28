@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+
+part 'app_fonts.dart';
 
 const defaultHorizontalPadding = 16.0;
 const defaultVerticalPadding = 20.0;
@@ -39,58 +40,4 @@ final theme = ThemeData.dark().copyWith(
       borderRadius: BorderRadius.circular(15.0),
     ),
   ),
-);
-
-const homeActiveImage = 'assets/image/home_active.svg';
-const homeDefaultImage = 'assets/image/home_default.svg';
-const searchActiveImage = 'assets/image/search_icon_acitve.svg';
-const searchDeafultImage = 'assets/image/search_icon_default.svg';
-const bookmarkActiveImage = 'assets/image/bookmark_icon_active.svg';
-const bookMarkDefaultImage = 'assets/image/bookmark_icon_default.svg';
-const starIconFull = 'assets/image/star_icon_full.svg';
-const starIconHalf = 'assets/image/star_icon_half.svg';
-const starIconEmpty = 'assets/image/star_icon_empty.svg';
-
-//TODO: put style to TextTheme
-final bigHeaderTextStyle = GoogleFonts.poppins(
-  fontSize: 30,
-  fontWeight: FontWeight.bold,
-);
-
-final movieNameBroadCardTextStyle = GoogleFonts.poppins(
-  fontSize: 20,
-  fontWeight: FontWeight.bold,
-);
-
-final wideMovieRateNumberTextStyle = GoogleFonts.poppins(
-  fontSize: 22,
-  fontWeight: FontWeight.w500,
-);
-
-final genreMovieTextStyle = GoogleFonts.poppins(
-  fontSize: 14,
-  fontWeight: FontWeight.w400,
-);
-
-final overviewMovieOnCardTextStyle = GoogleFonts.poppins(
-  fontSize: 13,
-  fontWeight: FontWeight.w400,
-  color: const Color(0xFF888888),
-);
-
-final overviewMovieTextStyle = GoogleFonts.poppins(
-  fontSize: 16,
-  fontWeight: FontWeight.w400,
-  color: const Color(0xFF888888),
-);
-
-final serchTextStyle = GoogleFonts.poppins(
-  fontSize: 18,
-  fontWeight: FontWeight.w500,
-);
-
-final linkTextStyle = GoogleFonts.poppins(
-  fontSize: 16,
-  fontWeight: FontWeight.bold,
-  color: _mainColor,
 );

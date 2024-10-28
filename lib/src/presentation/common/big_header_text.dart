@@ -13,11 +13,11 @@ class BigHeaderText extends StatelessWidget {
   Widget build(BuildContext context) => RichText(
         text: TextSpan(
           text: text,
-          style: bigHeaderTextStyle,
+          style: AppFonts.bigHeaderTextStyle,
           children: [
             TextSpan(
               text: '.',
-              style: bigHeaderTextStyle.copyWith(
+              style: AppFonts.bigHeaderTextStyle.copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),

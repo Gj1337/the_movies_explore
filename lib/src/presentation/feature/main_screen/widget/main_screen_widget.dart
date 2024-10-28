@@ -56,7 +56,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
 
         return RefreshIndicator(
           onRefresh: onPageRefresh,
-          child: ScrollUpButtonWidget(
+          child: ScrollUpButtonWrapper(
             scrollController: scrollController,
             child: CustomScrollView(
               cacheExtent: 1500,

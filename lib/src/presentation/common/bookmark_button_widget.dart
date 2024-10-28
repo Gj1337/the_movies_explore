@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/common/app_icons.dart';
 import 'package:the_movies_expore/src/presentation/utils/animation_speed.dart';
 
 class BookmarkButtonWidget extends StatelessWidget {
@@ -25,7 +25,9 @@ class BookmarkButtonWidget extends StatelessWidget {
           duration: AnimationSpeed.fast.duration,
           child: SvgPicture.asset(
             key: ValueKey(inBookmarks),
-            inBookmarks ? bookmarkActiveImage : bookMarkDefaultImage,
+            inBookmarks
+                ? AppIcons.bookmarkActiveImage
+                : AppIcons.bookMarkDefaultImage,
             width: 24,
             height: 24,
           ),

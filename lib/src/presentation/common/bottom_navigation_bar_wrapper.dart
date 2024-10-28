@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/common/app_icons.dart';
 import 'package:the_movies_expore/src/presentation/utils/animation_speed.dart';
 
 class BottomNavigationBarWrapper extends StatelessWidget {
@@ -18,18 +18,18 @@ class BottomNavigationBarWrapper extends StatelessWidget {
 
     final items = [
       BottomNavigationBarItem(
-        activeIcon: SvgPicture.asset(homeActiveImage),
-        icon: SvgPicture.asset(homeDefaultImage),
+        activeIcon: SvgPicture.asset(AppIcons.homeActiveImage),
+        icon: SvgPicture.asset(AppIcons.homeDefaultImage),
         label: '',
       ),
       BottomNavigationBarItem(
-        activeIcon: SvgPicture.asset(searchActiveImage),
-        icon: SvgPicture.asset(searchDeafultImage),
+        activeIcon: SvgPicture.asset(AppIcons.searchActiveImage),
+        icon: SvgPicture.asset(AppIcons.searchDeafultImage),
         label: '',
       ),
       BottomNavigationBarItem(
-        activeIcon: SvgPicture.asset(bookmarkActiveImage),
-        icon: SvgPicture.asset(bookMarkDefaultImage),
+        activeIcon: SvgPicture.asset(AppIcons.bookmarkActiveImage),
+        icon: SvgPicture.asset(AppIcons.bookMarkDefaultImage),
         label: '',
       ),
     ];
