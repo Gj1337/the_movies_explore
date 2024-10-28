@@ -35,15 +35,15 @@ class SearchScreenWidget extends StatelessWidget {
         appBar: AppBar(
           title: BigHeaderText(context.localizations.search),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: defaultHorizontalPadding,
-          ),
-          child: ScrollUpdateWidget(
-            onGetBorder: context.read<SearchSreenCubit>().uploadMore,
-            border: 70,
-            builder: (scrollController) => ScrollUpButtonWidget(
-              scrollController: scrollController,
+        body: ScrollUpdateWidget(
+          onGetBorder: context.read<SearchSreenCubit>().uploadMore,
+          border: 70,
+          builder: (scrollController) => ScrollUpButtonWrapper(
+            scrollController: scrollController,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: defaultHorizontalPadding,
+              ),
               child: CustomScrollView(
                 cacheExtent: 1500,
                 controller: scrollController,

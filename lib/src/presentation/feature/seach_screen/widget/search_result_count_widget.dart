@@ -15,7 +15,7 @@ class SearchResultCount extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           context.localizations.searchResult(count),
-          style: serchTextStyle,
+          style: AppFonts.serchTextStyle,
         ),
       );
 }

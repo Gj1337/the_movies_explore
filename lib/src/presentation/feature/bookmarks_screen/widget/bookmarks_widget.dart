@@ -40,7 +40,7 @@ class _BookmarksWidgetState extends State<BookmarksWidget> {
       body: BlocBuilder<BookmarksCubit, BookmarksState>(
         builder: (_, state) => BookmarksMoviesWrapperBuilder(
           movies: state.bookmarkedMovies,
-          builder: (movies) => ScrollUpButtonWidget(
+          builder: (movies) => ScrollUpButtonWrapper(
             scrollController: scrollController,
             child: Padding(
               padding: const EdgeInsets.symmetric(

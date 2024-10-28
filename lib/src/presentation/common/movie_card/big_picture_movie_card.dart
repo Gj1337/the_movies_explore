@@ -42,7 +42,7 @@ class _PigPictureMovieCard extends StatelessWidget {
                   const SizedBox(height: 12),
                   Text(
                     movie.title,
-                    style: movieNameBroadCardTextStyle,
+                    style: AppFonts.movieNameBroadCardTextStyle,
                     overflow: TextOverflow.ellipsis,
                   ),
                   MovieWideRateWidget(

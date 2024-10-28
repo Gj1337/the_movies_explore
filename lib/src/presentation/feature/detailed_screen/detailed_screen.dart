@@ -89,10 +89,10 @@ class DetailedScreen extends StatelessWidget {
               child: AnimatedReadMoreText(
                 movie.overview,
                 expandOnTextTap: false,
-                textStyle: overviewMovieTextStyle,
+                textStyle: AppFonts.overviewMovieTextStyle,
                 readMoreText: context.localizations.showMore,
                 readLessText: context.localizations.showLess,
-                buttonTextStyle: linkTextStyle,
+                buttonTextStyle: AppFonts.linkTextStyle,
               ),
             ),
           ),

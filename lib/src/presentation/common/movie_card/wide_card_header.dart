@@ -21,7 +21,7 @@ class WideCardHeader extends StatelessWidget {
         const SizedBox(height: 12),
         Text(
           movie.title,
-          style: movieNameBroadCardTextStyle,
+          style: AppFonts.movieNameBroadCardTextStyle,
           overflow: TextOverflow.clip,
           maxLines: 2,
         ),
@@ -31,14 +31,14 @@ class WideCardHeader extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           genreNames,
-          style: genreMovieTextStyle,
+          style: AppFonts.genreMovieTextStyle,
           overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(height: 10),
         Expanded(
           child: Text(
             movie.overview,
-            style: overviewMovieOnCardTextStyle,
+            style: AppFonts.overviewMovieOnCardTextStyle,
             overflow: TextOverflow.ellipsis,
             maxLines: 6,
           ),

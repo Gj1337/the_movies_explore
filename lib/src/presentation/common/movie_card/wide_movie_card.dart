@@ -21,11 +21,8 @@ class _WideMovieCard extends StatelessWidget {
     final genreNames = movie.genres.map((genre) => genre.name).join(', ');
 
     return Card(
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
       child: SizedBox(
-        width: 379,
+        // width: 379,
         height: 273,
         child: Stack(
           children: [
@@ -48,24 +45,26 @@ class _WideMovieCard extends StatelessWidget {
                       const SizedBox(height: 12),
                       Text(
                         movie.title,
-                        style: movieNameBroadCardTextStyle,
+                        style: AppFonts.movieNameBroadCardTextStyle,
                         overflow: TextOverflow.clip,
                         maxLines: 2,
                       ),
-                      MovieWideRateWidget(
-                        rate: movie.vote,
+                      FittedBox(
+                        child: MovieWideRateWidget(
+                          rate: movie.vote,
+                        ),
                       ),
                       const SizedBox(height: 10),
                       Text(
                         genreNames,
-                        style: genreMovieTextStyle,
+                        style: AppFonts.genreMovieTextStyle,
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 10),
                       Expanded(
                         child: Text(
                           movie.overview,
-                          style: overviewMovieOnCardTextStyle,
+                          style: AppFonts.overviewMovieOnCardTextStyle,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 7,
                         ),

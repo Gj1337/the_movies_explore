@@ -17,7 +17,7 @@ class MovieHeader extends StatelessWidget {
         children: [
           Text(
             movie.title,
-            style: bigHeaderTextStyle,
+            style: AppFonts.bigHeaderTextStyle,
             overflow: TextOverflow.ellipsis,
             maxLines: 3,
           ),
