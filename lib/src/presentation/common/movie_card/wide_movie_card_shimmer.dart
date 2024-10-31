@@ -1,7 +1,7 @@
-part of 'movie_card.dart';
+part of 'wide_movie_card.dart';
 
-class _WideMovieCardShimmer extends StatelessWidget {
-  const _WideMovieCardShimmer({super.key});
+class WideMovieCardShimmer extends StatelessWidget {
+  const WideMovieCardShimmer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class _WideMovieCardShimmer extends StatelessWidget {
     return ShimmerWrapper(
       child: SizedBox(
         width: 379,
-        height: 273,
+        height: _wideCardPictureSizeHeight,
         child: Row(
           children: [
             const ShimmerPlaceholder(width: 182, height: 359),

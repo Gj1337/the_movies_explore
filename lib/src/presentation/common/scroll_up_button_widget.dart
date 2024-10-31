@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 import 'package:the_movies_expore/src/presentation/utils/animation_speed.dart';
 
 class ScrollUpButtonWrapper extends StatefulWidget {

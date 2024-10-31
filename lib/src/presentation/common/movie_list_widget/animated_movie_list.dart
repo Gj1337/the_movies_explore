@@ -32,7 +32,7 @@ class _AnimatedMovieListState extends State<_AnimatedMovieList> {
           padding: const EdgeInsets.symmetric(
             vertical: defaultVerticalPadding / 2,
           ),
-          child: MovieCard.wide(
+          child: WideMovieCard(
             movie,
             onCardClick: () => widget.onMovieClick?.call(movie),
             onBookmarkClick: () => widget.onBookmarkClick?.call(movie),

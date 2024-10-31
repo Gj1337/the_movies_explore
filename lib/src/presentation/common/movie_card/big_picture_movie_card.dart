@@ -1,11 +1,21 @@
-part of 'movie_card.dart';
+import 'package:flutter/material.dart';
+import 'package:the_movies_expore/src/domain/entity/movie.dart';
+import 'package:the_movies_expore/src/presentation/common/bookmark_button_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_image.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_wide_rate_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/shimmer/shimmer_placeholder.dart';
+import 'package:the_movies_expore/src/presentation/common/shimmer/shimmer_wrapper.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
-const _bigPictureMovieCardSize = Size(300, 275);
-const _bigPicturePictureSize = Size(300, 200);
+part 'big_picture_movie_card_shimmer.dart';
 
-class _PigPictureMovieCard extends StatelessWidget {
-  const _PigPictureMovieCard({
-    required this.movie,
+const _bigPictureMovieCardWidth = 300.0;
+const _bigPictureMovieCardHeight = 275.0;
+const _bigPicturePictureHeight = 200.0;
+
+class BigPictureMovieCard extends StatelessWidget {
+  const BigPictureMovieCard(
+    this.movie, {
     this.onCardClick,
     this.onBookmarkClick,
     this.cacheImage = false,
@@ -18,57 +28,63 @@ class _PigPictureMovieCard extends StatelessWidget {
   final VoidCallback? onBookmarkClick;
 
   @override
-  Widget build(BuildContext context) => Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15),
+  Widget build(BuildContext context) {
+    final clickWrapper = Positioned.fill(
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onCardClick,
         ),
-        child: SizedBox(
-          width: _bigPictureMovieCardSize.width,
-          height: _bigPictureMovieCardSize.height,
-          child: Stack(
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    width: _bigPicturePictureSize.width,
-                    height: _bigPicturePictureSize.height,
-                    child: MovieImage(
-                      imageUrl: movie.backdropPath ?? movie.posterPath ?? '',
-                      memCacheWidth: _bigPicturePictureSize.width.toInt() * 2,
-                      isCaching: cacheImage,
-                    ),
-                  ),
-                  const SizedBox(height: 12),
-                  Text(
-                    movie.title,
-                    style: AppFonts.movieNameBroadCardTextStyle,
-                    overflow: TextOverflow.ellipsis,
-                  ),
-                  MovieWideRateWidget(
-                    rate: movie.vote,
-                  ),
-                ],
-              ),
-              Positioned.fill(
-                child: Material(
-                  color: Colors.transparent,
-                  child: InkWell(
-                    onTap: onCardClick,
+      ),
+    );
+
+    final bookmarkButton = Positioned(
+      child: Align(
+        alignment: Alignment.topRight,
+        child: BookmarkButtonWidget(
+          inBookmarks: movie.isBookmarked,
+          onPressed: onBookmarkClick,
+        ),
+      ),
+    );
+
+    return Card(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: SizedBox(
+        width: _bigPictureMovieCardWidth,
+        height: _bigPictureMovieCardHeight,
+        child: Stack(
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: _bigPictureMovieCardWidth,
+                  height: _bigPicturePictureHeight,
+                  child: MovieImage(
+                    imageUrl: movie.backdropPath ?? movie.posterPath ?? '',
+                    memCacheWidth: _bigPictureMovieCardWidth.toInt() * 2,
+                    isCaching: cacheImage,
                   ),
                 ),
-              ),
-              Positioned(
-                child: Align(
-                  alignment: Alignment.topRight,
-                  child: BookmarkButtonWidget(
-                    inBookmarks: movie.isBookmarked,
-                    onPressed: onBookmarkClick,
-                  ),
+                const SizedBox(height: 12),
+                Text(
+                  movie.title,
+                  style: AppFonts.movieNameBroadCard,
+                  overflow: TextOverflow.ellipsis,
                 ),
-              ),
-            ],
-          ),
+                MovieWideRateWidget(
+                  rate: movie.vote,
+                ),
+              ],
+            ),
+            clickWrapper,
+            bookmarkButton,
+          ],
         ),
-      );
+      ),
+    );
+  }
 }

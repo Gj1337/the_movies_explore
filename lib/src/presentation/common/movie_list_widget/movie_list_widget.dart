@@ -1,7 +1,7 @@
 // ignore_for_file: unused_field
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
-import 'package:the_movies_expore/src/presentation/common/movie_card/movie_card.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_card/wide_movie_card.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
 import 'package:flutter/material.dart';
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_wide_rate_widget.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
 class MovieHeader extends StatelessWidget {
   const MovieHeader({
@@ -17,7 +17,7 @@ class MovieHeader extends StatelessWidget {
         children: [
           Text(
             movie.title,
-            style: AppFonts.bigHeaderTextStyle,
+            style: AppFonts.bigHeader,
             overflow: TextOverflow.ellipsis,
             maxLines: 3,
           ),

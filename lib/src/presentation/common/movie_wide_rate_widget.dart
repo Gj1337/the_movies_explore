@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:the_movies_expore/src/presentation/common/app_icons.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
 const _minRate = 0;
 const _maxRate = 5;
@@ -46,7 +46,7 @@ class MovieWideRateWidget extends StatelessWidget {
           ),
           Text(
             roundedRate.toStringAsFixed(1),
-            style: AppFonts.wideMovieRateNumberTextStyle,
+            style: AppFonts.wideMovieRateNumber,
           ),
           const SizedBox(width: 6.5),
           ...starRate,

@@ -3,52 +3,58 @@ part of 'theme.dart';
 abstract final class AppFonts {
   static const _poppins = 'Poppins';
 
-  static final bigHeaderTextStyle = TextStyle(
+  static final bigHeader = TextStyle(
     fontFamily: _poppins,
     fontSize: 30,
     fontWeight: FontWeight.bold,
     color: Colors.white,
   );
 
-  static final movieNameBroadCardTextStyle = TextStyle(
+  static final movieNameBroadCard = TextStyle(
     fontFamily: _poppins,
     fontSize: 20,
     fontWeight: FontWeight.bold,
   );
 
-  static final wideMovieRateNumberTextStyle = TextStyle(
+  static final wideMovieRateNumber = TextStyle(
     fontFamily: _poppins,
     fontSize: 22,
     fontWeight: FontWeight.w500,
   );
 
-  static final genreMovieTextStyle = TextStyle(
+  static final genreMovie = TextStyle(
     fontFamily: _poppins,
     fontSize: 14,
     fontWeight: FontWeight.w400,
   );
 
-  static final overviewMovieOnCardTextStyle = TextStyle(
+  static final bannerTitle = TextStyle(
+    fontFamily: _poppins,
+    fontSize: 20,
+    fontWeight: FontWeight.bold,
+  );
+
+  static final overviewMovieOnCard = TextStyle(
     fontFamily: _poppins,
     fontSize: 13,
     fontWeight: FontWeight.w400,
     color: const Color(0xFF888888),
   );
 
-  static final overviewMovieTextStyle = TextStyle(
+  static final overviewMovie = TextStyle(
     fontFamily: _poppins,
     fontSize: 16,
     fontWeight: FontWeight.w400,
     color: const Color(0xFF888888),
   );
 
-  static final serchTextStyle = TextStyle(
+  static final serch = TextStyle(
     fontFamily: _poppins,
     fontSize: 18,
     fontWeight: FontWeight.w500,
   );
 
-  static final linkTextStyle = TextStyle(
+  static final link = TextStyle(
     fontFamily: _poppins,
     fontSize: 16,
     fontWeight: FontWeight.bold,

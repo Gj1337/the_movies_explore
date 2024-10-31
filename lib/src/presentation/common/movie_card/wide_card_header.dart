@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_wide_rate_widget.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
 class WideCardHeader extends StatelessWidget {
   const WideCardHeader({
@@ -21,7 +21,7 @@ class WideCardHeader extends StatelessWidget {
         const SizedBox(height: 12),
         Text(
           movie.title,
-          style: AppFonts.movieNameBroadCardTextStyle,
+          style: AppFonts.movieNameBroadCard,
           overflow: TextOverflow.clip,
           maxLines: 2,
         ),
@@ -31,14 +31,14 @@ class WideCardHeader extends StatelessWidget {
         const SizedBox(height: 10),
         Text(
           genreNames,
-          style: AppFonts.genreMovieTextStyle,
+          style: AppFonts.genreMovie,
           overflow: TextOverflow.ellipsis,
         ),
         const SizedBox(height: 10),
         Expanded(
           child: Text(
             movie.overview,
-            style: AppFonts.overviewMovieOnCardTextStyle,
+            style: AppFonts.overviewMovieOnCard,
             overflow: TextOverflow.ellipsis,
             maxLines: 6,
           ),

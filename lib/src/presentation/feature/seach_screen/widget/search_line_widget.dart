@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:the_movies_expore/src/presentation/common/app_icons.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
 
 class SearchLineWidget extends StatelessWidget {
@@ -23,7 +23,7 @@ class SearchLineWidget extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
           hintText: context.localizations.search,
-          hintStyle: AppFonts.serchTextStyle,
+          hintStyle: AppFonts.serch,
           prefixIcon: Container(
             alignment: Alignment.center,
             width: 20,

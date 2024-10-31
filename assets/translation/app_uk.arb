@@ -7,5 +7,7 @@
   "seeMore": "Більше",
   "searchResult": "Результат пошуку ({count})",
   "showMore": "Показати більше",
-  "showLess": "Згорнути"
+  "showLess": "Згорнути",
+  "somethingWentWrong": "Ой, щось сталося",
+  "pullToUpate":"Спробуйте потягнути сторінку вниз, щоб оновити дані."
 }

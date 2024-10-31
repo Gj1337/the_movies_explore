@@ -32,4 +32,6 @@ abstract interface class MovieRepository {
   Future<void> bookmakrMovie(Movie movie);
 
   Future<void> undoBookmarMovie(Movie movie);
+
+  Future<void> dispose();
 }
