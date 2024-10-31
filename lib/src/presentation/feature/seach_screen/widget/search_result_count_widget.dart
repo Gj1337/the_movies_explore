@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
 
 class SearchResultCount extends StatelessWidget {
@@ -15,7 +15,7 @@ class SearchResultCount extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           context.localizations.searchResult(count),
-          style: AppFonts.serchTextStyle,
+          style: AppFonts.serch,
         ),
       );
 }

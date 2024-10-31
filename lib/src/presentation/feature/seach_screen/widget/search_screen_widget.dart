@@ -8,7 +8,7 @@ import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookma
 import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_update_widget.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 import 'package:the_movies_expore/src/presentation/feature/seach_screen/cubit/search_screen_cubit.dart';
 import 'package:the_movies_expore/src/presentation/feature/seach_screen/cubit/search_screen_state.dart';
 import 'package:the_movies_expore/src/presentation/feature/seach_screen/widget/search_line_widget.dart';

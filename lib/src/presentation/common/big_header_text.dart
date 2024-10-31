@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
 class BigHeaderText extends StatelessWidget {
   const BigHeaderText(
@@ -13,11 +13,11 @@ class BigHeaderText extends StatelessWidget {
   Widget build(BuildContext context) => RichText(
         text: TextSpan(
           text: text,
-          style: AppFonts.bigHeaderTextStyle,
+          style: AppFonts.bigHeader,
           children: [
             TextSpan(
               text: '.',
-              style: AppFonts.bigHeaderTextStyle.copyWith(
+              style: AppFonts.bigHeader.copyWith(
                 color: Theme.of(context).colorScheme.primary,
               ),
             ),

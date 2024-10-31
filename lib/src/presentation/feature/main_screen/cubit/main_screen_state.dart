@@ -8,5 +8,6 @@ class MainScreenState with _$MainScreenState {
   const factory MainScreenState({
     @Default([]) List<Movie> topMovies,
     @Default([]) List<Movie> latestMovies,
+    @Default(false) bool isLoading,
   }) = _MainScreenState;
 }

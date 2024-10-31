@@ -230,4 +230,12 @@ final class MovieRepositoryImpl implements MovieRepository {
 
     return domainDetailedMovie;
   }
+
+  @override
+  @disposeMethod
+  Future<void> dispose() async {
+    await _popularMoviesStreamController.close();
+    await _bookmarkedMoviesStreamController.close();
+    await _topMoviesStreamController.close();
+  }
 }

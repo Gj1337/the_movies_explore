@@ -1,19 +1,19 @@
-part of 'movie_card.dart';
+part of 'big_picture_movie_card.dart';
 
-class _BigPictureMovieCardShimmer extends StatelessWidget {
-  const _BigPictureMovieCardShimmer({super.key});
+class BigPictureMovieCardShimmer extends StatelessWidget {
+  const BigPictureMovieCardShimmer({super.key});
 
   @override
   Widget build(BuildContext context) => ShimmerWrapper(
         child: SizedBox(
-          width: _bigPictureMovieCardSize.width,
-          height: _bigPictureMovieCardSize.height,
+          width: _bigPictureMovieCardWidth,
+          height: _bigPictureMovieCardHeight,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ShimmerPlaceholder(
-                width: _bigPicturePictureSize.width,
-                height: _bigPicturePictureSize.height,
+                width: _bigPictureMovieCardWidth,
+                height: _bigPicturePictureHeight,
               ),
               const SizedBox(height: 12),
               const ShimmerPlaceholder(height: 24),

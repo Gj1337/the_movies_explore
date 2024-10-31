@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
-import 'package:the_movies_expore/src/presentation/common/movie_card/movie_card.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_card/big_picture_movie_card.dart';
 import 'package:the_movies_expore/src/presentation/utils/animation_speed.dart';
 
 const _height = 275.0;
@@ -25,10 +25,10 @@ class CarouselMoviesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final movieWidgets = isLoading
-        ? List.generate(3, (_) => const MovieCard.bigPictureShimmer())
+        ? List.generate(3, (_) => const BigPictureMovieCardShimmer())
         : movies
             .map(
-              (movie) => MovieCard.bitPicture(
+              (movie) => BigPictureMovieCard(
                 movie,
                 cacheImage: cacheImage,
                 onBookmarkClick: () => onBookmarkClick?.call(movie),

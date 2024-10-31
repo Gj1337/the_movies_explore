@@ -7,7 +7,7 @@ import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmark_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
-import 'package:the_movies_expore/src/presentation/common/theme.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 import 'package:the_movies_expore/src/presentation/feature/detailed_screen/movie_header.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
 
@@ -89,10 +89,10 @@ class DetailedScreen extends StatelessWidget {
               child: AnimatedReadMoreText(
                 movie.overview,
                 expandOnTextTap: false,
-                textStyle: AppFonts.overviewMovieTextStyle,
+                textStyle: AppFonts.overviewMovie,
                 readMoreText: context.localizations.showMore,
                 readLessText: context.localizations.showLess,
-                buttonTextStyle: AppFonts.linkTextStyle,
+                buttonTextStyle: AppFonts.link,
               ),
             ),
           ),

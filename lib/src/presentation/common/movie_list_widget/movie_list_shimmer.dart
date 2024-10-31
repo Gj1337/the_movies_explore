@@ -14,7 +14,7 @@ class _MovieListShimmer extends StatelessWidget {
           (context, int index) => const Padding(
             padding:
                 EdgeInsets.symmetric(vertical: defaultHorizontalPadding / 2),
-            child: MovieCard.wideMovieCardShimmer(),
+            child: WideMovieCardShimmer(),
           ),
           childCount: shimmersCount,
         ),

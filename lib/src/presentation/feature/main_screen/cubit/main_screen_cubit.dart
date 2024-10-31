@@ -7,7 +7,7 @@ import 'package:the_movies_expore/src/domain/repository/movie_repository.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/cubit/main_screen_state.dart';
 import 'package:the_movies_expore/src/presentation/utils/logger_mixin.dart';
 
-@lazySingleton
+@injectable
 final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
   MainScreenCubit(
     this._movieRepository,
@@ -19,6 +19,11 @@ final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
 
   StreamSubscription<MoviesPage>? _topMoviesStreamSubscription;
 
+  Future<void> _updateMovies(String language) async {
+    await _movieRepository.fetchTopMovies(language: language);
+    await _movieRepository.fetchPopularMovies(language: language);
+  }
+
   Future<void> onCreate(String language) async {
     logger.i('onCreate language $language');
 
@@ -28,28 +33,20 @@ final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
     _latestMoviesStreamSubscription =
         _movieRepository.popularMoviesStream().listen(_onLatestMoviesChanged);
 
-    try {
-      await _movieRepository.fetchTopMovies(language: language);
-    } catch (exception) {
-      logger.e('onCreate catch $exception');
-    }
+    emit(state.copyWith(isLoading: true));
 
     try {
-      await _movieRepository.fetchPopularMovies(language: language);
+      await _updateMovies(language);
     } catch (exception) {
       logger.e('onCreate catch $exception');
+    } finally {
+      emit(state.copyWith(isLoading: false));
     }
   }
 
   Future<void> onPageRefresh(String language) async {
     try {
-      await _movieRepository.fetchTopMovies(language: language);
-    } catch (exception) {
-      logger.e('onPageRefresh catch $exception');
-    }
-
-    try {
-      await _movieRepository.fetchPopularMovies(language: language);
+      await _updateMovies(language);
     } catch (exception) {
       logger.e('onPageRefresh catch $exception');
     }
@@ -65,8 +62,8 @@ final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
 
   @override
   Future<void> close() async {
-    _latestMoviesStreamSubscription?.cancel();
-    _topMoviesStreamSubscription?.cancel();
+    await _latestMoviesStreamSubscription?.cancel();
+    await _topMoviesStreamSubscription?.cancel();
 
     return super.close();
   }

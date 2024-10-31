@@ -7,5 +7,7 @@
   "seeMore": "SEE MORE",
   "searchResult": "Search result ({count})",
   "showMore": "Show more",
-  "showLess": "Show less"
+  "showLess": "Show less",
+  "somethingWentWrong": "Something went wrong",
+  "pullToUpate":"Try pulling the page down to refresh the data."
 }

@@ -1,10 +1,20 @@
-part of 'movie_card.dart';
+import 'package:flutter/material.dart';
+import 'package:the_movies_expore/src/domain/entity/movie.dart';
+import 'package:the_movies_expore/src/presentation/common/bookmark_button_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_image.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_wide_rate_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/shimmer/shimmer_placeholder.dart';
+import 'package:the_movies_expore/src/presentation/common/shimmer/shimmer_wrapper.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
-const _wideCardPictureSize = Size(182, 359);
+part 'wide_movie_card_shimmer.dart';
 
-class _WideMovieCard extends StatelessWidget {
-  const _WideMovieCard({
-    required this.movie,
+const _wideCardPictureSizeWidth = 182.0;
+const _wideCardPictureSizeHeight = 359.0;
+
+class WideMovieCard extends StatelessWidget {
+  const WideMovieCard(
+    this.movie, {
     this.onCardClick,
     this.onBookmarkClick,
     this.cacheImage = false,
@@ -20,9 +30,25 @@ class _WideMovieCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final genreNames = movie.genres.map((genre) => genre.name).join(', ');
 
+    final clickWrapper = Positioned.fill(
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          onTap: onCardClick,
+        ),
+      ),
+    );
+
+    final bookmarkButton = Positioned(
+      left: 135,
+      child: BookmarkButtonWidget(
+        inBookmarks: movie.isBookmarked,
+        onPressed: onBookmarkClick,
+      ),
+    );
+
     return Card(
       child: SizedBox(
-        // width: 379,
         height: 273,
         child: Stack(
           children: [
@@ -34,7 +60,7 @@ class _WideMovieCard extends StatelessWidget {
                   child: MovieImage(
                     isCaching: cacheImage,
                     imageUrl: movie.posterPath ?? '',
-                    memCacheWidth: _wideCardPictureSize.width.toInt() * 2,
+                    memCacheWidth: _wideCardPictureSizeWidth.toInt() * 2,
                   ),
                 ),
                 const SizedBox(width: defaultHorizontalPadding),
@@ -45,7 +71,7 @@ class _WideMovieCard extends StatelessWidget {
                       const SizedBox(height: 12),
                       Text(
                         movie.title,
-                        style: AppFonts.movieNameBroadCardTextStyle,
+                        style: AppFonts.movieNameBroadCard,
                         overflow: TextOverflow.clip,
                         maxLines: 2,
                       ),
@@ -57,14 +83,14 @@ class _WideMovieCard extends StatelessWidget {
                       const SizedBox(height: 10),
                       Text(
                         genreNames,
-                        style: AppFonts.genreMovieTextStyle,
+                        style: AppFonts.genreMovie,
                         overflow: TextOverflow.ellipsis,
                       ),
                       const SizedBox(height: 10),
                       Expanded(
                         child: Text(
                           movie.overview,
-                          style: AppFonts.overviewMovieOnCardTextStyle,
+                          style: AppFonts.overviewMovieOnCard,
                           overflow: TextOverflow.ellipsis,
                           maxLines: 7,
                         ),
@@ -74,21 +100,8 @@ class _WideMovieCard extends StatelessWidget {
                 ),
               ],
             ),
-            Positioned.fill(
-              child: Material(
-                color: Colors.transparent,
-                child: InkWell(
-                  onTap: onCardClick,
-                ),
-              ),
-            ),
-            Positioned(
-              left: 135,
-              child: BookmarkButtonWidget(
-                inBookmarks: movie.isBookmarked,
-                onPressed: onBookmarkClick,
-              ),
-            ),
+            clickWrapper,
+            bookmarkButton,
           ],
         ),
       ),

@@ -8,7 +8,7 @@ import 'package:the_movies_expore/src/domain/repository/movie_repository.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_state.dart';
 import 'package:the_movies_expore/src/presentation/utils/logger_mixin.dart';
 
-@lazySingleton
+@injectable
 final class BookmarksCubit extends Cubit<BookmarksState> with LoggerMixin {
   BookmarksCubit(
     this._movieRepository,
