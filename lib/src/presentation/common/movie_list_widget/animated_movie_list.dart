@@ -1,7 +1,10 @@
-part of 'movie_list_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:the_movies_expore/src/domain/entity/movie.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_card/wide_movie_card.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
-class _AnimatedMovieList extends StatefulWidget {
-  const _AnimatedMovieList({
+class AnimatedMovieList extends StatefulWidget {
+  const AnimatedMovieList({
     required this.movies,
     super.key,
     this.onMovieClick,
@@ -15,10 +18,10 @@ class _AnimatedMovieList extends StatefulWidget {
   final void Function(Movie movie)? onBookmarkClick;
 
   @override
-  State<_AnimatedMovieList> createState() => _AnimatedMovieListState();
+  State<AnimatedMovieList> createState() => _AnimatedMovieListState();
 }
 
-class _AnimatedMovieListState extends State<_AnimatedMovieList> {
+class _AnimatedMovieListState extends State<AnimatedMovieList> {
   final _animationKey = GlobalKey<SliverAnimatedListState>();
 
   Widget _itemBuilder(
@@ -42,7 +45,7 @@ class _AnimatedMovieListState extends State<_AnimatedMovieList> {
       );
 
   @override
-  void didUpdateWidget(covariant _AnimatedMovieList oldWidget) {
+  void didUpdateWidget(covariant AnimatedMovieList oldWidget) {
     final itemWereRemoved = widget.movies.length < oldWidget.movies.length;
 
     final itemsWereAdded = widget.movies.length > oldWidget.movies.length;

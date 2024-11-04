@@ -19,11 +19,6 @@ final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
 
   StreamSubscription<MoviesPage>? _topMoviesStreamSubscription;
 
-  Future<void> _updateMovies(String language) async {
-    await _movieRepository.fetchTopMovies(language: language);
-    await _movieRepository.fetchPopularMovies(language: language);
-  }
-
   Future<void> onCreate(String language) async {
     logger.i('onCreate language $language');
 
@@ -36,19 +31,31 @@ final class MainScreenCubit extends Cubit<MainScreenState> with LoggerMixin {
     emit(state.copyWith(isLoading: true));
 
     try {
-      await _updateMovies(language);
+      await _movieRepository.fetchTopMovies(language: language);
     } catch (exception) {
-      logger.e('onCreate catch $exception');
-    } finally {
-      emit(state.copyWith(isLoading: false));
+      logger.e('onCreate catch while fetchTopMovies $exception');
     }
+
+    try {
+      await _movieRepository.fetchPopularMovies(language: language);
+    } catch (exception) {
+      logger.e('onCreate catch while fetchPopularMovies $exception');
+    }
+
+    emit(state.copyWith(isLoading: false));
   }
 
   Future<void> onPageRefresh(String language) async {
     try {
-      await _updateMovies(language);
+      await _movieRepository.fetchTopMovies(language: language);
     } catch (exception) {
-      logger.e('onPageRefresh catch $exception');
+      logger.e('onPageRefresh catch while fetchTopMovies $exception');
+    }
+
+    try {
+      await _movieRepository.fetchPopularMovies(language: language);
+    } catch (exception) {
+      logger.e('onPageRefresh catch while fetchPopularMovies $exception');
     }
   }
 
