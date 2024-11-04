@@ -10,7 +10,7 @@ import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 part 'wide_movie_card_shimmer.dart';
 
 const _wideCardPictureSizeWidth = 182.0;
-const _wideCardPictureSizeHeight = 359.0;
+const _wideCardPictureSizeHeight = 273.0;
 
 class WideMovieCard extends StatelessWidget {
   const WideMovieCard(
@@ -49,7 +49,7 @@ class WideMovieCard extends StatelessWidget {
 
     return Card(
       child: SizedBox(
-        height: 273,
+        height: _wideCardPictureSizeHeight,
         child: Stack(
           children: [
             Row(

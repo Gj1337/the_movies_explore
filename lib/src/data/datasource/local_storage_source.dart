@@ -68,8 +68,10 @@ final class LocalStorageSource {
 
   PaginationMovieListResponse? getTopRatedMovies(int page) =>
       _getPaginationMovieListResponse(_formatTopRatedKey(page));
+
   PaginationMovieListResponse? getLatestMovies(int page) =>
       _getPaginationMovieListResponse(_formatLatestRatedKey(page));
+
   PaginationMovieListResponse? getBookmaredMovies(int page) =>
       _getPaginationMovieListResponse(_formatBookmaredRatedKey(page));
 
@@ -80,6 +82,7 @@ final class LocalStorageSource {
         paginationMovieListResponse,
         _formatTopRatedKey(paginationMovieListResponse.page),
       );
+
   void putLatestMovies(
     PaginationMovieListResponse paginationMovieListResponse,
   ) =>
@@ -87,6 +90,7 @@ final class LocalStorageSource {
         paginationMovieListResponse,
         _formatLatestRatedKey(paginationMovieListResponse.page),
       );
+
   void putBookmaredMovies(
     PaginationMovieListResponse paginationMovieListResponse,
   ) =>

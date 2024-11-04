@@ -13,7 +13,6 @@ class SomethingWentWrongBanner extends StatelessWidget {
     return InfoBanner(
       imageProvider: AssetImage(AppIcons.warning),
       title: localization.somethingWentWrong,
-      message: localization.pullToUpate,
     );
   }
 }

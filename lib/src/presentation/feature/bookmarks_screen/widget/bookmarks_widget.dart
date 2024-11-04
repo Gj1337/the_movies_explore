@@ -6,7 +6,7 @@ import 'package:the_movies_expore/src/presentation/common/big_header_text.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_state.dart';
-import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list_widget.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_list_widget/animated_movie_list.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
@@ -50,7 +50,7 @@ class _BookmarksWidgetState extends State<BookmarksWidget> {
                 cacheExtent: 1500,
                 controller: scrollController,
                 slivers: [
-                  MovieListWidget(
+                  AnimatedMovieList(
                     onBookmarkClick: onBookmarkClick,
                     onMovieClick: onCardClick,
                     movies: movies,

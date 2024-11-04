@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:the_movies_expore/src/domain/repository/movie_repository.dart';
+import 'package:the_movies_expore/src/presentation/feature/seach_screen/cubit/search_screen_error.dart';
 import 'package:the_movies_expore/src/presentation/feature/seach_screen/cubit/search_screen_state.dart';
 import 'package:the_movies_expore/src/presentation/utils/logger_mixin.dart';
 
@@ -29,7 +30,11 @@ final class SearchSreenCubit extends Cubit<SearchSreenState> with LoggerMixin {
     _language = null;
 
     emit(
-      state.copyWith(isLoading: true, totalResult: null),
+      state.copyWith(
+        isLoading: true,
+        error: null,
+        totalResult: null,
+      ),
     );
 
     try {
@@ -50,6 +55,8 @@ final class SearchSreenCubit extends Cubit<SearchSreenState> with LoggerMixin {
       );
     } catch (exception) {
       logger.e('seachMovies catch $exception');
+
+      emit(state.copyWith(error: SearchScreenError.connectionError));
     } finally {
       emit(state.copyWith(isLoading: false));
     }

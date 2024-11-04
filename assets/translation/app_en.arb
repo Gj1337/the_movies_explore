@@ -9,5 +9,8 @@
   "showMore": "Show more",
   "showLess": "Show less",
   "somethingWentWrong": "Something went wrong",
-  "pullToUpate":"Try pulling the page down to refresh the data."
+  "pullToUpate": "Try pulling the page down to refresh the data.",
+  "enterMovieTitle": "Enter movie title",
+  "nothingFound": "Nothing found",
+  "moviesWithEnteredHaventFound": "Movies with entered name haven’t been found, try another one."
 }

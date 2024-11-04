@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
 import 'package:the_movies_expore/src/presentation/utils/shaking_wrapper.dart';
 
 class InfoBanner extends StatelessWidget {
   const InfoBanner({
-    required this.picture,
+    required this.imageProvider,
     required this.title,
     this.message,
     super.key,
   });
 
-  final SvgAssetLoader picture;
+  final ImageProvider imageProvider;
   final String title;
   final String? message;
 
@@ -27,8 +26,8 @@ class InfoBanner extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ShakingWrapper(
-            child: SvgPicture(
-              picture,
+            child: Image(
+              image: imageProvider,
               height: 150,
               width: 150,
             ),

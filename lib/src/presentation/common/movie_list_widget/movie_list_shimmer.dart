@@ -1,17 +1,19 @@
-part of 'movie_list_widget.dart';
+import 'package:flutter/material.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_card/wide_movie_card.dart';
+import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 
-class _MovieListShimmer extends StatelessWidget {
-  const _MovieListShimmer({
-    super.key,
+class MovieListShimmer extends StatelessWidget {
+  const MovieListShimmer({
     this.shimmersCount = 1,
+    super.key,
   });
 
-  final int? shimmersCount;
+  final int shimmersCount;
 
   @override
   Widget build(BuildContext context) => SliverList(
         delegate: SliverChildBuilderDelegate(
-          (context, int index) => const Padding(
+          (context, index) => const Padding(
             padding:
                 EdgeInsets.symmetric(vertical: defaultHorizontalPadding / 2),
             child: WideMovieCardShimmer(),

@@ -8,12 +8,13 @@ import 'package:the_movies_expore/src/movies_app.dart';
 import 'package:the_movies_expore/src/presentation/common/big_header_text.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list.dart';
+import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list_shimmer.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/widget/something_went_wrong_banner.dart';
 import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/cubit/main_screen_cubit.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/cubit/main_screen_state.dart';
-import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list_widget.dart';
 import 'package:the_movies_expore/src/presentation/feature/main_screen/widget/carousel_movies_widget.dart';
 import 'package:the_movies_expore/src/presentation/utils/animation_speed.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
@@ -59,13 +60,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
         final showError =
             (topMovies.isEmpty || latestMovies.isEmpty) && !isLoading;
 
-        final errorWidget = Center(
-          key: UniqueKey(),
-          child: SingleChildScrollView(
-            physics: AlwaysScrollableScrollPhysics(),
-            child: SomethingWentWrongBanner(),
-          ),
-        );
+        final errorWidget = SomethingWentWrongBanner();
 
         final carouselWidget = BookmarksMoviesWrapperBuilder(
           movies: carouselMovies,
@@ -80,7 +75,7 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
 
         final movieListWidget = BookmarksMoviesWrapperBuilder(
           movies: latestMovies,
-          builder: (movies) => MovieListWidget(
+          builder: (movies) => MovieList(
             onBookmarkClick: onBookmarkClick,
             onMovieClick: onCardClick,
             movies: movies,
@@ -88,20 +83,21 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
           ),
         );
 
-        final shimmerWidget = const MovieListWidget.shimmer(shimmerCount: 3);
+        final shimmerWidget = MovieListShimmer(shimmersCount: 3);
 
         return RefreshIndicator(
           onRefresh: onPageRefresh,
           child: AnimatedSwitcher(
             duration: AnimationSpeed.slow.duration,
-            child: showError
-                ? errorWidget
-                : ScrollUpButtonWrapper(
-                    scrollController: scrollController,
-                    child: CustomScrollView(
-                      cacheExtent: 1500,
-                      controller: scrollController,
-                      slivers: [
+            child: ScrollUpButtonWrapper(
+              scrollController: scrollController,
+              child: CustomScrollView(
+                physics: AlwaysScrollableScrollPhysics(),
+                cacheExtent: 1500,
+                controller: scrollController,
+                slivers: showError
+                    ? [SliverFillRemaining(child: errorWidget)]
+                    : [
                         SliverStickyHeader(
                           sticky: false,
                           header: AppBar(
@@ -127,8 +123,8 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
                           ),
                         ),
                       ],
-                    ),
-                  ),
+              ),
+            ),
           ),
         );
       },

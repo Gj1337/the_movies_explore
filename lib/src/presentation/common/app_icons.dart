@@ -8,8 +8,8 @@ abstract final class AppIcons {
   static const starIconFull = 'assets/image/star_icon_full.svg';
   static const starIconHalf = 'assets/image/star_icon_half.svg';
   static const starIconEmpty = 'assets/image/star_icon_empty.svg';
-  static const error = 'assets/image/error.svg';
-  static const typing = 'assets/image/typing.svg';
-  static const notFound = 'assets/image/not_found.svg';
+  static const warning = 'assets/image/warning.png';
+  static const typing = 'assets/image/typing.png';
+  static const notFound = 'assets/image/not_found.png';
   static const emptyBox = 'assets/image/empty_box.svg';
 }

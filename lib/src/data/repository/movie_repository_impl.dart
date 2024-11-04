@@ -80,6 +80,7 @@ final class MovieRepositoryImpl implements MovieRepository {
         language: language,
         page: page,
       );
+
       genresResponse = await _networkDataSource.getGanres(language: language);
 
       _localStorageSource.putLatestMovies(queryResponse);
@@ -92,12 +93,14 @@ final class MovieRepositoryImpl implements MovieRepository {
 
       rethrow;
     } finally {
-      final moviePage = _paginationListMovieResponceToDomainMoviesPage(
-        queryResponse!,
-        genresResponse!.genres,
-      );
+      if (queryResponse != null && genresResponse != null) {
+        final moviePage = _paginationListMovieResponceToDomainMoviesPage(
+          queryResponse,
+          genresResponse.genres,
+        );
 
-      _popularMoviesStreamController.add(moviePage);
+        _popularMoviesStreamController.add(moviePage);
+      }
     }
   }
 
@@ -130,12 +133,14 @@ final class MovieRepositoryImpl implements MovieRepository {
 
       rethrow;
     } finally {
-      final moviePage = _paginationListMovieResponceToDomainMoviesPage(
-        queryResponse!,
-        genresResponse!.genres,
-      );
+      if (queryResponse != null && genresResponse != null) {
+        final moviePage = _paginationListMovieResponceToDomainMoviesPage(
+          queryResponse,
+          genresResponse.genres,
+        );
 
-      _topMoviesStreamController.add(moviePage);
+        _topMoviesStreamController.add(moviePage);
+      }
     }
   }
 
