@@ -8,6 +8,7 @@ import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookma
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_state.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_list_widget/animated_movie_list.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
+import 'package:the_movies_expore/src/presentation/feature/bookmarks_screen/widget/empty_list_banner.dart';
 import 'package:the_movies_expore/src/presentation/theme/theme.dart';
 import 'package:the_movies_expore/src/presentation/utils/localization_extension.dart';
 
@@ -33,34 +34,40 @@ class _BookmarksWidgetState extends State<BookmarksWidget> {
 
     return Scaffold(
       appBar: AppBar(
-        title: BigHeaderText(
-          context.localizations.bookmakrs,
-        ),
+        title: BigHeaderText(context.localizations.bookmakrs),
       ),
       body: BlocBuilder<BookmarksCubit, BookmarksState>(
-        builder: (_, state) => BookmarksMoviesWrapperBuilder(
-          movies: state.bookmarkedMovies,
-          builder: (movies) => ScrollUpButtonWrapper(
-            scrollController: scrollController,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: defaultHorizontalPadding,
-              ),
-              child: CustomScrollView(
-                cacheExtent: 1500,
-                controller: scrollController,
-                slivers: [
-                  AnimatedMovieList(
-                    onBookmarkClick: onBookmarkClick,
-                    onMovieClick: onCardClick,
-                    movies: movies,
-                    cacheImages: true,
-                  ),
-                ],
-              ),
+        builder: (_, state) {
+          final bookmarksAreEmpty = state.bookmarkedMovies.isEmpty;
+
+          return BookmarksMoviesWrapperBuilder(
+            movies: state.bookmarkedMovies,
+            builder: (movies) => ScrollUpButtonWrapper(
+              scrollController: scrollController,
+              child: bookmarksAreEmpty
+                  ? Center(
+                      child: EmptyListBanner(),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: defaultHorizontalPadding,
+                      ),
+                      child: CustomScrollView(
+                        cacheExtent: 1500,
+                        controller: scrollController,
+                        slivers: [
+                          AnimatedMovieList(
+                            onBookmarkClick: onBookmarkClick,
+                            onMovieClick: onCardClick,
+                            movies: movies,
+                            cacheImages: true,
+                          ),
+                        ],
+                      ),
+                    ),
             ),
-          ),
-        ),
+          );
+        },
       ),
     );
   }

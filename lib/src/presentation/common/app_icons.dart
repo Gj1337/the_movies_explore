@@ -11,5 +11,5 @@ abstract final class AppIcons {
   static const warning = 'assets/image/warning.png';
   static const typing = 'assets/image/typing.png';
   static const notFound = 'assets/image/not_found.png';
-  static const emptyBox = 'assets/image/empty_box.svg';
+  static const emptyBox = 'assets/image/empty_box.png';
 }

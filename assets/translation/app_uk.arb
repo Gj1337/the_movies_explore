@@ -12,5 +12,7 @@
   "pullToUpate": "Спробуйте потягнути сторінку вниз, щоб оновити дані.",
   "enterMovieTitle": "Введіть назву фільму",
 "nothingFound": "Нічого не знайдено",
- "moviesWithEnteredHaventFound": "Фільми з введеною назвою не знайдені, спробуйте інший."
+ "moviesWithEnteredHaventFound": "Фільми з введеною назвою не знайдені, спробуйте інший.",
+ "bookmarksAreEmpty": "Закладки порожні",
+ "exploreMoviesToBookmark": "Перегляньте фільми та натисніть кнопку закладки, щоб зберегти."
 }

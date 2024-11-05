@@ -12,5 +12,7 @@
   "pullToUpate": "Try pulling the page down to refresh the data.",
   "enterMovieTitle": "Enter movie title",
   "nothingFound": "Nothing found",
-  "moviesWithEnteredHaventFound": "Movies with entered name haven’t been found, try another one."
+  "moviesWithEnteredHaventFound": "Movies with entered name haven’t been found, try another one.",
+  "bookmarksAreEmpty": "Bookmarks are empty",
+  "exploreMoviesToBookmark": "Explore movies and click on bookmark button to save it."
 }
