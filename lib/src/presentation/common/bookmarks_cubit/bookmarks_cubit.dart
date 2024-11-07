@@ -33,9 +33,10 @@ final class BookmarksCubit extends Cubit<BookmarksState> with LoggerMixin {
   }
 
   Future<void> changeBookmarkStatus(Movie movie) async {
-    final isBookmarked = movie.isBookmarked;
+    final isBookmarked = state.bookmarkedMovies
+        .any((bookmarkedMovie) => bookmarkedMovie.id == movie.id);
 
-    logger.i('changeBookmarkStatus movie ${movie.id}');
+    logger.i('changeBookmarkStatus movie ${movie.id} to $isBookmarked');
 
     try {
       isBookmarked

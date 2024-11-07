@@ -8,7 +8,7 @@ abstract final class Routes {
     name: 'main',
   );
   static const RouteInfo detailedScreen = (
-    path: '/detailed',
+    path: '/detailed/:movieId',
     name: 'detailed',
   );
   static const RouteInfo searchScreen = (
@@ -28,9 +28,9 @@ final _router = GoRouter(
       path: Routes.detailedScreen.path,
       name: Routes.detailedScreen.name,
       builder: (_, state) {
-        final movie = state.extra as Movie;
+        final movieIdParameter = state.pathParameters['movieId'];
 
-        return DetailedScreen(movie: movie);
+        return DetailedScreen(movieId: int.tryParse(movieIdParameter ?? ''));
       },
     ),
     StatefulShellRoute.indexedStack(

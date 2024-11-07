@@ -5,7 +5,6 @@ import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
 import 'package:the_movies_expore/src/di/dependency_injection.config.dart';
 import 'package:the_movies_expore/src/di/di_provider.dart';
-import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
 import 'package:the_movies_expore/src/presentation/common/bottom_navigation_bar_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/theme/theme.dart';
@@ -18,21 +17,46 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 part 'presentation/routes.dart';
 
-class MoviesApp extends StatelessWidget {
+class MoviesApp extends StatefulWidget {
   const MoviesApp({super.key});
 
   @override
+  State<MoviesApp> createState() => _MoviesAppState();
+}
+
+class _MoviesAppState extends State<MoviesApp> {
+  late final GetIt _getIt;
+
+  Future<void> _setUpDi(GetIt getIt) async {
+    await init(getIt);
+
+    FlutterNativeSplash.remove();
+  }
+
+  @override
+  void initState() {
+    _getIt = GetIt.instance;
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) => DiProvider(
-        getIt: GetIt.instance,
+        getIt: _getIt,
         setupGetIt: _setUpDi,
         child: MaterialApp.router(
           builder: (context, child) {
-            final bookmarksCubit = context.getIt.get<BookmarksCubit>()
-              ..onCreate();
+            final getIt = context.getIt;
 
             return BlocProvider<BookmarksCubit>(
               lazy: false,
-              create: (_) => bookmarksCubit,
+              create: (_) {
+                final bookmarksCubit = getIt.get<BookmarksCubit>();
+
+                bookmarksCubit.onCreate();
+
+                return bookmarksCubit;
+              },
               child: child,
             );
           },
@@ -50,10 +74,4 @@ class MoviesApp extends StatelessWidget {
           ],
         ),
       );
-}
-
-Future<void> _setUpDi(GetIt getIt) async {
-  await init(getIt);
-
-  FlutterNativeSplash.remove();
 }

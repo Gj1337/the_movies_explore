@@ -1,5 +1,8 @@
+// ignore_for_file: unused_element
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:the_movies_expore/src/domain/entity/genre.dart';
+import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/domain/entity/movies_collection.dart';
 import 'package:the_movies_expore/src/domain/entity/production_company.dart';
 import 'package:the_movies_expore/src/domain/entity/production_country.dart';
@@ -9,6 +12,8 @@ part 'detailed_movie.freezed.dart';
 
 @freezed
 class DetailedMovie with _$DetailedMovie {
+  const DetailedMovie._();
+
   const factory DetailedMovie({
     required int id,
     required String title,
@@ -36,6 +41,16 @@ class DetailedMovie with _$DetailedMovie {
     String? posterPath,
     String? backdropPath,
     String? homepage,
-    @Default(false) bool isBookmarked,
   }) = _DetailedMovie;
+
+  Movie get movie => Movie(
+        id: id,
+        title: title,
+        overview: overview,
+        vote: vote,
+        genres: genres,
+        webUrl: webUrl,
+        posterPath: posterPath,
+        backdropPath: backdropPath,
+      );
 }

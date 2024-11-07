@@ -9,11 +9,15 @@ class SeachScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final searchCubit = context.getIt.get<SearchSreenCubit>();
+    final getIt = context.getIt;
 
     return SafeArea(
       child: BlocProvider<SearchSreenCubit>(
-        create: (_) => searchCubit,
+        create: (_) {
+          final searchCubit = getIt.get<SearchSreenCubit>();
+
+          return searchCubit;
+        },
         child: const SearchScreenWidget(),
       ),
     );

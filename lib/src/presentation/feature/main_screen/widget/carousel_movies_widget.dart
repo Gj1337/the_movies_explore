@@ -12,14 +12,12 @@ class CarouselMoviesWidget extends StatelessWidget {
     super.key,
     this.isLoading = false,
     this.onMovieClick,
-    this.onBookmarkClick,
     this.cacheImage = false,
   });
 
   final List<Movie> movies;
   final bool cacheImage;
   final void Function(Movie movie)? onMovieClick;
-  final void Function(Movie movie)? onBookmarkClick;
   final bool isLoading;
 
   @override
@@ -31,8 +29,6 @@ class CarouselMoviesWidget extends StatelessWidget {
               (movie) => BigPictureMovieCard(
                 movie,
                 cacheImage: cacheImage,
-                onBookmarkClick: () => onBookmarkClick?.call(movie),
-                onCardClick: () => onMovieClick?.call(movie),
               ),
             )
             .toList();

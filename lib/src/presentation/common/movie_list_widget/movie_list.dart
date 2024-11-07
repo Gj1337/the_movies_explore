@@ -32,8 +32,6 @@ class MovieList extends StatelessWidget {
                 ),
                 child: WideMovieCard(
                   movie,
-                  onCardClick: () => onMovieClick?.call(movie),
-                  onBookmarkClick: () => onBookmarkClick?.call(movie),
                   cacheImage: cacheImages,
                 ),
               );
