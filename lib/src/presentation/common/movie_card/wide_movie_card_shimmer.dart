@@ -15,11 +15,13 @@ class WideMovieCardShimmer extends StatelessWidget {
 
     return ShimmerWrapper(
       child: SizedBox(
-        width: 379,
         height: _wideCardPictureSizeHeight,
         child: Row(
           children: [
-            const ShimmerPlaceholder(width: 182, height: 359),
+            const ShimmerPlaceholder(
+              width: _wideCardPictureSizeWidth,
+              height: _wideCardPictureSizeHeight,
+            ),
             const SizedBox(width: defaultHorizontalPadding),
             Expanded(
               child: Column(

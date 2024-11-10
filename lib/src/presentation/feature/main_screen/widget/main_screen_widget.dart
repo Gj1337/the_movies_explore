@@ -3,11 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sticky_header/flutter_sticky_header.dart';
-import 'package:go_router/go_router.dart';
-import 'package:the_movies_expore/src/movies_app.dart';
 import 'package:the_movies_expore/src/presentation/common/big_header_text.dart';
-import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
-import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list_shimmer.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
@@ -33,14 +29,6 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
-    Future<Object?> onCardClick(movie) => context.pushNamed(
-          Routes.detailedScreen.name,
-          extra: movie,
-        );
-
-    Future<void> onBookmarkClick(movie) =>
-        context.read<BookmarksCubit>().changeBookmarkStatus(movie);
-
     Future<void> onPageRefresh() {
       final language = Localizations.localeOf(context).languageCode;
       return context.read<MainScreenCubit>().onPageRefresh(language);
@@ -62,25 +50,15 @@ class _MainScreenWidgetState extends State<MainScreenWidget> {
 
         final errorWidget = SomethingWentWrongBanner();
 
-        final carouselWidget = BookmarksMoviesWrapperBuilder(
+        final carouselWidget = CarouselMoviesWidget(
           movies: carouselMovies,
-          builder: (movies) => CarouselMoviesWidget(
-            onBookmarkClick: onBookmarkClick,
-            onMovieClick: onCardClick,
-            movies: movies,
-            isLoading: isLoading,
-            cacheImage: true,
-          ),
+          isLoading: isLoading,
+          cacheImage: true,
         );
 
-        final movieListWidget = BookmarksMoviesWrapperBuilder(
+        final movieListWidget = MovieList(
           movies: latestMovies,
-          builder: (movies) => MovieList(
-            onBookmarkClick: onBookmarkClick,
-            onMovieClick: onCardClick,
-            movies: movies,
-            cacheImages: true,
-          ),
+          cacheImages: true,
         );
 
         final shimmerWidget = MovieListShimmer(shimmersCount: 3);

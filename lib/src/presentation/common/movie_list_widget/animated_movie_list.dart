@@ -37,8 +37,6 @@ class _AnimatedMovieListState extends State<AnimatedMovieList> {
           ),
           child: WideMovieCard(
             movie,
-            onCardClick: () => widget.onMovieClick?.call(movie),
-            onBookmarkClick: () => widget.onBookmarkClick?.call(movie),
             cacheImage: widget.cacheImages,
           ),
         ),

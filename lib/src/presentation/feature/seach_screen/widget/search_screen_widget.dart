@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:the_movies_expore/src/movies_app.dart';
 import 'package:the_movies_expore/src/presentation/common/big_header_text.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
-import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_movies_wrapper.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_list_widget/movie_list_shimmer.dart';
 import 'package:the_movies_expore/src/presentation/common/scroll_up_button_widget.dart';
@@ -34,13 +33,10 @@ class SearchScreenWidget extends StatelessWidget {
 
     return BlocBuilder<SearchSreenCubit, SearchSreenState>(
       builder: (context, state) {
-        final moviesList = BookmarksMoviesWrapperBuilder(
+        final moviesList = MovieList(
           movies: state.foundedMovies ?? [],
-          builder: (movies) => MovieList(
-            movies: movies,
-            onMovieClick: onCardClick,
-            onBookmarkClick: onBookmarkClick,
-          ),
+          onMovieClick: onCardClick,
+          onBookmarkClick: onBookmarkClick,
         );
 
         final searchBlock = Column(

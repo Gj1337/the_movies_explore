@@ -14,6 +14,5 @@ class Movie with _$Movie {
     required String webUrl,
     String? posterPath,
     String? backdropPath,
-    @Default(false) bool isBookmarked,
   }) = _Movie;
 }

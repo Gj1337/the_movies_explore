@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:the_movies_expore/src/domain/entity/movie.dart';
+import 'package:the_movies_expore/src/movies_app.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmark_button_widget.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_image.dart';
 import 'package:the_movies_expore/src/presentation/common/movie_wide_rate_widget.dart';
@@ -16,16 +18,19 @@ const _bigPicturePictureHeight = 200.0;
 class BigPictureMovieCard extends StatelessWidget {
   const BigPictureMovieCard(
     this.movie, {
-    this.onCardClick,
-    this.onBookmarkClick,
     this.cacheImage = false,
     super.key,
   });
 
   final Movie movie;
   final bool cacheImage;
-  final VoidCallback? onCardClick;
-  final VoidCallback? onBookmarkClick;
+
+  void _onCardClick(BuildContext context) {
+    context.pushNamed(
+      Routes.detailedScreen.name,
+      pathParameters: {'movieId': movie.id.toString()},
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +38,7 @@ class BigPictureMovieCard extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: onCardClick,
+          onTap: () => _onCardClick(context),
         ),
       ),
     );
@@ -41,10 +46,7 @@ class BigPictureMovieCard extends StatelessWidget {
     final bookmarkButton = Positioned(
       child: Align(
         alignment: Alignment.topRight,
-        child: BookmarkButtonWidget(
-          inBookmarks: movie.isBookmarked,
-          onPressed: onBookmarkClick,
-        ),
+        child: BookmarkButtonWidget(movie: movie),
       ),
     );
 

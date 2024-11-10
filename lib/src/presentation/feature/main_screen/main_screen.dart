@@ -10,12 +10,17 @@ class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final language = Localizations.localeOf(context).languageCode;
-    final mainScreenCubit = context.getIt.get<MainScreenCubit>()
-      ..onCreate(language);
+    final getIt = context.getIt;
 
     return Scaffold(
       body: BlocProvider<MainScreenCubit>(
-        create: (_) => mainScreenCubit,
+        create: (_) {
+          final mainScreenCubit = getIt.get<MainScreenCubit>();
+
+          mainScreenCubit.onCreate(language);
+
+          return mainScreenCubit;
+        },
         child: const SafeArea(child: MainScreenWidget()),
       ),
     );
