@@ -8,8 +8,8 @@ class WideMovieCardShimmer extends StatelessWidget {
     final descriptionShimmer = List.generate(
       7,
       (_) => const Padding(
-        padding: EdgeInsets.symmetric(vertical: 2),
-        child: ShimmerPlaceholder(height: 16),
+        padding: EdgeInsets.symmetric(vertical: 3),
+        child: ShimmerPlaceholder(height: 14),
       ),
     );
 
@@ -27,9 +27,9 @@ class WideMovieCardShimmer extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   const ShimmerPlaceholder(height: 29),
-                  const SizedBox(height: 12),
+                  const SizedBox(height: 10),
                   const Row(
                     children: [
                       Flexible(
@@ -42,11 +42,9 @@ class WideMovieCardShimmer extends StatelessWidget {
                     ],
                   ),
                   const SizedBox(height: 10),
-                  const Card(
-                    child: ShimmerPlaceholder(height: 20),
-                  ),
+                  ShimmerPlaceholder(height: 20),
                   const SizedBox(height: 10),
-                  Expanded(child: Column(children: descriptionShimmer)),
+                  ...descriptionShimmer,
                 ],
               ),
             ),

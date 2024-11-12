@@ -5,12 +5,12 @@ class DiProvider extends StatefulWidget {
   const DiProvider({
     required this.child,
     required this.getIt,
-    required this.setupGetIt,
+    this.setupGetIt,
     super.key,
   });
 
   final GetIt getIt;
-  final Future<void> Function(GetIt getIt) setupGetIt;
+  final Future<void> Function(GetIt getIt)? setupGetIt;
 
   final Widget child;
 
@@ -21,9 +21,13 @@ class DiProvider extends StatefulWidget {
 }
 
 class _DiProviderState extends State<DiProvider> {
+  Future<void> _getItSetup() async {
+    await widget.setupGetIt?.call(widget.getIt);
+  }
+
   @override
   Widget build(BuildContext context) => FutureBuilder(
-        future: widget.setupGetIt.call(widget.getIt),
+        future: _getItSetup(),
         builder: (_, asyncSnapshot) => switch (asyncSnapshot.connectionState) {
           ConnectionState.none ||
           ConnectionState.waiting ||

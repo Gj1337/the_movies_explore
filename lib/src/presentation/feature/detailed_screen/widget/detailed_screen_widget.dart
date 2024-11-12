@@ -111,7 +111,7 @@ class DetailedScreenWidget extends StatelessWidget {
                 height: 900,
                 color: Colors.amber,
               ),
-            )
+            ),
           ],
         );
       },

@@ -1,5 +1,4 @@
 name: Lint
-run-name: ${{ github.actor }} Lint
 
 on:
   pull_request:

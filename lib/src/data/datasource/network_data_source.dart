@@ -7,21 +7,21 @@ import 'package:retrofit/retrofit.dart';
 
 part 'network_data_source.g.dart';
 
-@singleton
+@Singleton(env: [Environment.dev, Environment.prod])
 @RestApi()
 abstract class NetworkDataSource {
   @factoryMethod
   factory NetworkDataSource(Dio dio) = _NetworkDataSource;
 
   @GET('/movie/top_rated')
-  Future<PaginationMovieListResponse> getPopularMovies({
+  Future<PaginationMovieListResponse> getTopRatedMovies({
     @Query('language') required String language,
     @Query('page') required int page,
     @Query('region') String? region,
   });
 
   @GET('/movie/popular')
-  Future<PaginationMovieListResponse> getTopRatedMovies({
+  Future<PaginationMovieListResponse> getPopularMovies({
     @Query('language') required String language,
     @Query('page') required int page,
     @Query('region') String? region,

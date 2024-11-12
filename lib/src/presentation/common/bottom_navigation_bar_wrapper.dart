@@ -39,7 +39,7 @@ class BottomNavigationBarWrapper extends StatelessWidget {
         duration: AnimationSpeed.normal.duration,
         layoutBuilder: (currentChild, previousChildren) =>
             currentChild ?? previousChildren.last,
-        child: SizedBox(
+        child: KeyedSubtree(
           key: ValueKey(child.currentIndex),
           child: child,
         ),

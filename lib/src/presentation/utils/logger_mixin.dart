@@ -5,7 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 
 mixin LoggerMixin<T> on BlocBase<T> {
-  late final logger = Logger(printer: _MyPrinter(runtimeType.toString()));
+  late final logger = Logger(
+    printer: _MyPrinter(runtimeType.toString()),
+  );
 }
 
 class _MyPrinter extends LogPrinter {

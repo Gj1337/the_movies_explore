@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get_it/get_it.dart';
 import 'package:go_router/go_router.dart';
+import 'package:injectable/injectable.dart';
 import 'package:the_movies_expore/src/di/dependency_injection.config.dart';
 import 'package:the_movies_expore/src/di/di_provider.dart';
 import 'package:the_movies_expore/src/presentation/common/bookmarks_cubit/bookmarks_cubit.dart';
@@ -28,7 +29,10 @@ class _MoviesAppState extends State<MoviesApp> {
   late final GetIt _getIt;
 
   Future<void> _setUpDi(GetIt getIt) async {
-    await init(getIt);
+    final environment =
+        String.fromEnvironment('Environment', defaultValue: 'dev');
+
+    await init(getIt, environment: environment);
 
     FlutterNativeSplash.remove();
   }

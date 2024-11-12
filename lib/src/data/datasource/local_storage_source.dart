@@ -13,7 +13,7 @@ const _bookmaredRatedKey = 'bookmaredRatedKey';
 const _genresKey = 'ganreKey';
 
 @singleton
-final class LocalStorageSource {
+class LocalStorageSource {
   LocalStorageSource(this._sharedPreferences);
 
   final SharedPreferences _sharedPreferences;

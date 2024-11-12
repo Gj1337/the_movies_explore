@@ -29,7 +29,7 @@ Discover the best and latest movies with *The movie explore* , available on both
 * **Network requests(http)** - [Retorfit][Retorfit] 
 * **localization** - [intl][intl]
 * **Navigation** - [Go router][Go_router]
-* **Test** - [test][test] & [Mockito][Mockito] 
+* **Test** - [test][test] & [Mocktail][Mocktail] 
 
 ## 🛠️ Setup
 
@@ -77,7 +77,7 @@ You can upload last version by following sources:
 [intl]: https://pub.dev/packages/intl
 [Go_router]: https://pub.dev/packages/go_router
 [test]: https://pub.dev/packages/test
-[Mockito]: https://pub.dev/packages/mockito
+[Mocktail]: https://pub.dev/packages/mocktail
 [API_token_source]: https://developer.themoviedb.org/docs/getting-started
 [FVM]: https://fvm.app
 [Env_setup]: https://dart.dev/guides/environment-declarations

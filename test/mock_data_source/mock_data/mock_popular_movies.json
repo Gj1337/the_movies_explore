@@ -1,0 +1,1211 @@
+[
+    {
+        "page": 1,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "/gMQibswELoKmB60imE7WFMlCuqY.jpg",
+                "genre_ids": [
+                    27,
+                    53
+                ],
+                "id": 1034541,
+                "original_language": "en",
+                "original_title": "Terrifier 3",
+                "overview": "Five years after surviving Art the Clown's Halloween massacre, Sienna and Jonathan are still struggling to rebuild their shattered lives. As the holiday season approaches, they try to embrace the Christmas spirit and leave the horrors of the past behind. But just when they think they're safe, Art returns, determined to turn their holiday cheer into a new nightmare. The festive season quickly unravels as Art unleashes his twisted brand of terror, proving that no holiday is safe.",
+                "popularity": 6883.159,
+                "poster_path": "/63xYQj1BwRFielxsBDXvHIJyXVm.jpg",
+                "release_date": "2024-10-09",
+                "title": "Terrifier 3",
+                "video": false,
+                "vote_average": 7.3,
+                "vote_count": 583
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/3V4kLQg0kSqPLctI5ziYWabAZYF.jpg",
+                "genre_ids": [
+                    878,
+                    28,
+                    12
+                ],
+                "id": 912649,
+                "original_language": "en",
+                "original_title": "Venom: The Last Dance",
+                "overview": "Eddie and Venom are on the run. Hunted by both of their worlds and with the net closing in, the duo are forced into a devastating decision that will bring the curtains down on Venom and Eddie's last dance.",
+                "popularity": 5590.757,
+                "poster_path": "/k42Owka8v91trK1qMYwCQCNwJKr.jpg",
+                "release_date": "2024-10-22",
+                "title": "Venom: The Last Dance",
+                "video": false,
+                "vote_average": 6.7,
+                "vote_count": 467
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/4zlOPT9CrtIX05bBIkYxNZsm5zN.jpg",
+                "genre_ids": [
+                    16,
+                    878,
+                    10751
+                ],
+                "id": 1184918,
+                "original_language": "en",
+                "original_title": "The Wild Robot",
+                "overview": "After a shipwreck, an intelligent robot called Roz is stranded on an uninhabited island. To survive the harsh environment, Roz bonds with the island's animals and cares for an orphaned baby goose.",
+                "popularity": 4321.421,
+                "poster_path": "/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
+                "release_date": "2024-09-12",
+                "title": "The Wild Robot",
+                "video": false,
+                "vote_average": 8.543,
+                "vote_count": 2365
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/oPUOpnl3pqD8wuidjfUn17mO1yA.jpg",
+                "genre_ids": [
+                    16,
+                    878,
+                    12,
+                    10751
+                ],
+                "id": 698687,
+                "original_language": "en",
+                "original_title": "Transformers One",
+                "overview": "The untold origin story of Optimus Prime and Megatron, better known as sworn enemies, but once were friends bonded like brothers who changed the fate of Cybertron forever.",
+                "popularity": 2550.704,
+                "poster_path": "/iHPIBzrjJHbXeY9y7VVbEVNt7LW.jpg",
+                "release_date": "2024-09-11",
+                "title": "Transformers One",
+                "video": false,
+                "vote_average": 8.167,
+                "vote_count": 527
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/9oYdz5gDoIl8h67e3ccv3OHtmm2.jpg",
+                "genre_ids": [
+                    18,
+                    27,
+                    878
+                ],
+                "id": 933260,
+                "original_language": "en",
+                "original_title": "The Substance",
+                "overview": "Have you ever dreamt of a better version of yourself? You, only better in every way. You should try this new product, it's called The Substance. IT CHANGED MY LIFE.",
+                "popularity": 2881.789,
+                "poster_path": "/lqoMzCcZYEFK729d6qzt349fB4o.jpg",
+                "release_date": "2024-09-07",
+                "title": "The Substance",
+                "video": false,
+                "vote_average": 7.3,
+                "vote_count": 1359
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/uGmYqxh8flqkudioyFtD7IJSHxK.jpg",
+                "genre_ids": [
+                    18,
+                    80,
+                    53
+                ],
+                "id": 889737,
+                "original_language": "en",
+                "original_title": "Joker: Folie à Deux",
+                "overview": "While struggling with his dual identity, Arthur Fleck not only stumbles upon true love, but also finds the music that's always been inside him.",
+                "popularity": 2614.505,
+                "poster_path": "/if8QiqCI7WAGImKcJCfzp6VTyKA.jpg",
+                "release_date": "2024-10-01",
+                "title": "Joker: Folie à Deux",
+                "video": false,
+                "vote_average": 5.7,
+                "vote_count": 1333
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/6vn6K9oX82i6E86ZiHVxqVEMQqP.jpg",
+                "genre_ids": [
+                    878,
+                    27
+                ],
+                "id": 945961,
+                "original_language": "en",
+                "original_title": "Alien: Romulus",
+                "overview": "While scavenging the deep ends of a derelict space station, a group of young space colonizers come face to face with the most terrifying life form in the universe.",
+                "popularity": 1992.724,
+                "poster_path": "/b33nnKl1GSFbao4l3fZDDqsMx0F.jpg",
+                "release_date": "2024-08-13",
+                "title": "Alien: Romulus",
+                "video": false,
+                "vote_average": 7.267,
+                "vote_count": 2127
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/p5ozvmdgsmbWe0H8Xk7Rc8SCwAB.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    12,
+                    35,
+                    18
+                ],
+                "id": 1022789,
+                "original_language": "en",
+                "original_title": "Inside Out 2",
+                "overview": "Teenager Riley's mind headquarters is undergoing a sudden demolition to make room for something entirely unexpected: new Emotions! Joy, Sadness, Anger, Fear and Disgust, who’ve long been running a successful operation by all accounts, aren’t sure how to feel when Anxiety shows up. And it looks like she’s not alone.",
+                "popularity": 1676.036,
+                "poster_path": "/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg",
+                "release_date": "2024-06-11",
+                "title": "Inside Out 2",
+                "video": false,
+                "vote_average": 7.61,
+                "vote_count": 4586
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/VuukZLgaCrho2Ar8Scl9HtV3yD.jpg",
+                "genre_ids": [
+                    878,
+                    28
+                ],
+                "id": 335983,
+                "original_language": "en",
+                "original_title": "Venom",
+                "overview": "Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect the world from a shadowy organization looking for a symbiote of their own.",
+                "popularity": 1917.653,
+                "poster_path": "/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg",
+                "release_date": "2018-09-28",
+                "title": "Venom",
+                "video": false,
+                "vote_average": 6.835,
+                "vote_count": 15874
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/yDHYTfA3R0jFYba16jBB1ef8oIt.jpg",
+                "genre_ids": [
+                    28,
+                    35,
+                    878
+                ],
+                "id": 533535,
+                "original_language": "en",
+                "original_title": "Deadpool & Wolverine",
+                "overview": "A listless Wade Wilson toils away in civilian life with his days as the morally flexible mercenary, Deadpool, behind him. But when his homeworld faces an existential threat, Wade must reluctantly suit-up again with an even more reluctant Wolverine.",
+                "popularity": 1885.377,
+                "poster_path": "/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg",
+                "release_date": "2024-07-24",
+                "title": "Deadpool & Wolverine",
+                "video": false,
+                "vote_average": 7.7,
+                "vote_count": 5022
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/llIXQAndg5kB6SWlp6ouUdO7Zxd.jpg",
+                "genre_ids": [
+                    12,
+                    36,
+                    28,
+                    18,
+                    10749,
+                    53
+                ],
+                "id": 1084736,
+                "original_language": "fr",
+                "original_title": "Le Comte de Monte-Cristo",
+                "overview": "Edmond Dantes becomes the target of a sinister plot and is arrested on his wedding day for a crime he did not commit. After 14 years in the island prison of Château d’If, he manages a daring escape. Now rich beyond his dreams, he assumes the identity of the Count of Monte-Cristo and exacts his revenge on the three men who betrayed him.",
+                "popularity": 2126.371,
+                "poster_path": "/r7iCXrXmq4hKpB4QfDzZd8vsJ7l.jpg",
+                "release_date": "2024-06-28",
+                "title": "The Count of Monte-Cristo",
+                "video": false,
+                "vote_average": 8.3,
+                "vote_count": 732
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/vIgyYkXkg6NC2whRbYjBD7eb3Er.jpg",
+                "genre_ids": [
+                    878,
+                    28,
+                    12
+                ],
+                "id": 580489,
+                "original_language": "en",
+                "original_title": "Venom: Let There Be Carnage",
+                "overview": "After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.",
+                "popularity": 1488.305,
+                "poster_path": "/1MJNcPZy46hIy2CmSqOeru0yr5C.jpg",
+                "release_date": "2021-09-30",
+                "title": "Venom: Let There Be Carnage",
+                "video": false,
+                "vote_average": 6.799,
+                "vote_count": 10101
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/askg3SMvhqEl4OL52YuvdtY40Yb.jpg",
+                "genre_ids": [
+                    10751,
+                    16,
+                    10402,
+                    12
+                ],
+                "id": 354912,
+                "original_language": "en",
+                "original_title": "Coco",
+                "overview": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
+                "popularity": 1121.64,
+                "poster_path": "/gGEsBPAijhVUFoiNpgZXqRVWJt2.jpg",
+                "release_date": "2017-10-27",
+                "title": "Coco",
+                "video": false,
+                "vote_average": 8.209,
+                "vote_count": 19388
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/9s9o9RT9Yj6nDuRJjnJm78WFoFl.jpg",
+                "genre_ids": [
+                    28,
+                    27,
+                    53,
+                    878
+                ],
+                "id": 1051896,
+                "original_language": "en",
+                "original_title": "Arcadian",
+                "overview": "In the near future, on a decimated Earth, Paul and his twin sons face terror at night when ferocious creatures awaken. When Paul is nearly killed, the boys come up with a plan for survival, using everything their father taught them to keep him alive.",
+                "popularity": 1844.021,
+                "poster_path": "/spWV1eRzlDxvai8LbxwAWR0Vst4.jpg",
+                "release_date": "2024-04-12",
+                "title": "Arcadian",
+                "video": false,
+                "vote_average": 6.031,
+                "vote_count": 382
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/uLqNGzJwnj8JKkKuRM2dHWJKCtc.jpg",
+                "genre_ids": [
+                    28,
+                    27,
+                    53
+                ],
+                "id": 1029235,
+                "original_language": "en",
+                "original_title": "Azrael",
+                "overview": "In a world where no one speaks, a devout female hunts down a young woman who has escaped her imprisonment. Recaptured by its ruthless leaders, Azrael is due to be sacrificed to pacify an ancient evil deep within the surrounding wilderness.",
+                "popularity": 1063.12,
+                "poster_path": "/qpdFKDvJS7oLKTcBLXOaMwUESbs.jpg",
+                "release_date": "2024-09-27",
+                "title": "Azrael",
+                "video": false,
+                "vote_average": 6.149,
+                "vote_count": 114
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/lgkPzcOSnTvjeMnuFzozRO5HHw1.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    35,
+                    28
+                ],
+                "id": 519182,
+                "original_language": "en",
+                "original_title": "Despicable Me 4",
+                "overview": "Gru and Lucy and their girls—Margo, Edith and Agnes—welcome a new member to the Gru family, Gru Jr., who is intent on tormenting his dad. Gru also faces a new nemesis in Maxime Le Mal and his femme fatale girlfriend Valentina, forcing the family to go on the run.",
+                "popularity": 1225.064,
+                "poster_path": "/wWba3TaojhK7NdycRhoQpsG0FaH.jpg",
+                "release_date": "2024-06-20",
+                "title": "Despicable Me 4",
+                "video": false,
+                "vote_average": 7.113,
+                "vote_count": 2105
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/csQSGH0QU8D3Ov5YLEYuHep8ihA.jpg",
+                "genre_ids": [
+                    53,
+                    12,
+                    28,
+                    878
+                ],
+                "id": 1196470,
+                "original_language": "fr",
+                "original_title": "Survivre",
+                "overview": "A couple celebrates their son’s birthday in the middle of the ocean on their boat. A violent storm hits and it brings up hungry creatures from the depths and they fight for their survival.",
+                "popularity": 1262.118,
+                "poster_path": "/7fR3KxswtY8OHHZuOUB9td58CRX.jpg",
+                "release_date": "2024-06-19",
+                "title": "Survive",
+                "video": false,
+                "vote_average": 5,
+                "vote_count": 36
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/naNXYdBzTEb1KwOdi1RbBkM9Zv1.jpg",
+                "genre_ids": [
+                    27,
+                    53
+                ],
+                "id": 420634,
+                "original_language": "en",
+                "original_title": "Terrifier",
+                "overview": "A maniacal clown named Art terrorizes three young women on Halloween night and everyone else who stands in his way.",
+                "popularity": 1298.546,
+                "poster_path": "/sFaPj5UyIAsiRuIgVl60pCYUzmR.jpg",
+                "release_date": "2018-01-25",
+                "title": "Terrifier",
+                "video": false,
+                "vote_average": 6.393,
+                "vote_count": 2341
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/begseNUKhZcc05Bc1UggaX5GeES.jpg",
+                "genre_ids": [
+                    28,
+                    53,
+                    80
+                ],
+                "id": 976734,
+                "original_language": "en",
+                "original_title": "Canary Black",
+                "overview": "Top level CIA agent Avery Graves is blackmailed by terrorists into betraying her own country to save her kidnapped husband. Cut off from her team, she turns to her underworld contacts to survive and help locate the coveted intelligence that the kidnappers want.",
+                "popularity": 1301.295,
+                "poster_path": "/hhiR6uUbTYYvKoACkdAIQPS5c6f.jpg",
+                "release_date": "2024-10-10",
+                "title": "Canary Black",
+                "video": false,
+                "vote_average": 6.4,
+                "vote_count": 168
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/9msuazXGWAyl7vhxVFU7e7Bb5Ik.jpg",
+                "genre_ids": [
+                    18,
+                    10749
+                ],
+                "id": 179387,
+                "original_language": "tl",
+                "original_title": "Heavenly Touch",
+                "overview": "Jonard is having trouble making ends meet. His mother is suffering from depression, and he and his sister are forced to quit school in order to take care of her. One day, Jonard meets up his friend Rodel, and Rodel introduces him to the world of massage parlors. Rodel teaches him massage, and brings him to Heavenly Touch, a syndicate-run massage parlor that mostly caters to homosexuals.",
+                "popularity": 1028.191,
+                "poster_path": "/ory8WuAqznTE7lfopTSymHpop2t.jpg",
+                "release_date": "2009-05-12",
+                "title": "Heavenly Touch",
+                "video": false,
+                "vote_average": 6.3,
+                "vote_count": 21
+            }
+        ],
+        "total_pages": 3,
+        "total_results": 60
+    },
+    {
+        "page": 2,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "/6Rjsm5khNaYa4Gnw4iHnGX2E34T.jpg",
+                "genre_ids": [
+                    27,
+                    53
+                ],
+                "id": 1063877,
+                "original_language": "en",
+                "original_title": "Don't Move",
+                "overview": "A grieving woman in a secluded forest encounters a killer who injects her with a paralytic drug. As her body shuts down, her fight for survival begins.",
+                "popularity": 1014.001,
+                "poster_path": "/cRDJxdnRb7ikKd6fVJTrGeaL34v.jpg",
+                "release_date": "2024-10-24",
+                "title": "Don't Move",
+                "video": false,
+                "vote_average": 6.5,
+                "vote_count": 357
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/xi1VSt3DtkevUmzCx2mNlCoDe74.jpg",
+                "genre_ids": [
+                    35,
+                    14,
+                    27
+                ],
+                "id": 917496,
+                "original_language": "en",
+                "original_title": "Beetlejuice Beetlejuice",
+                "overview": "After a family tragedy, three generations of the Deetz family return home to Winter River. Still haunted by Betelgeuse, Lydia's life is turned upside down when her teenage daughter, Astrid, accidentally opens the portal to the Afterlife.",
+                "popularity": 976.081,
+                "poster_path": "/kKgQzkUCnQmeTPkyIwHly2t6ZFI.jpg",
+                "release_date": "2024-09-04",
+                "title": "Beetlejuice Beetlejuice",
+                "video": false,
+                "vote_average": 7.155,
+                "vote_count": 1702
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/cRdA9xjHBbobw4LJFsQ3j1CgpVq.jpg",
+                "genre_ids": [
+                    27,
+                    53
+                ],
+                "id": 663712,
+                "original_language": "en",
+                "original_title": "Terrifier 2",
+                "overview": "A year after the Miles County massacre, Art the Clown is resurrected by a sinister entity. Art returns home, where he must hunt down and destroy teenage Sienna and her younger brother Jonathan on Halloween. As the body count rises, the siblings fight to stay alive while uncovering the true nature of Art's evil intent.",
+                "popularity": 1060.271,
+                "poster_path": "/8gLhu8UFPZfH2Hv11JhTZkb9CVl.jpg",
+                "release_date": "2022-10-06",
+                "title": "Terrifier 2",
+                "video": false,
+                "vote_average": 6.8,
+                "vote_count": 1947
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/zAqBIeO71BFL7bAtP5TFzVjVamy.jpg",
+                "genre_ids": [
+                    10749,
+                    18
+                ],
+                "id": 1079091,
+                "original_language": "en",
+                "original_title": "It Ends with Us",
+                "overview": "When a woman's first love suddenly reenters her life, her relationship with a charming, but abusive neurosurgeon is upended, and she realizes she must learn to rely on her own strength to make an impossible choice for her future.",
+                "popularity": 638.752,
+                "poster_path": "/AjV6jFJ2YFIluYo4GQf13AA1tqu.jpg",
+                "release_date": "2024-08-07",
+                "title": "It Ends with Us",
+                "video": false,
+                "vote_average": 7.2,
+                "vote_count": 970
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/v23fWgJUEt8EMmvn19btIacxP8E.jpg",
+                "genre_ids": [
+                    10749,
+                    14,
+                    16
+                ],
+                "id": 3933,
+                "original_language": "en",
+                "original_title": "Corpse Bride",
+                "overview": "Set in a 19th-century European village, this stop-motion animation feature follows the story of Victor, a young man whisked away to the underworld and wed to a mysterious corpse bride, while his real bride Victoria waits bereft in the land of the living.",
+                "popularity": 718.341,
+                "poster_path": "/isb2Qow76GpqYmsSyfdMfsYAjts.jpg",
+                "release_date": "2005-09-12",
+                "title": "Corpse Bride",
+                "video": false,
+                "vote_average": 7.58,
+                "vote_count": 9220
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/rivlyJuBKNnSgzOU0GkEWIuawjt.jpg",
+                "genre_ids": [
+                    28,
+                    18,
+                    53
+                ],
+                "id": 991610,
+                "original_language": "nl",
+                "original_title": "Invasie",
+                "overview": "When neighboring country Veragua suddenly attacks Curaçao and Aruba, the Dutch government is taken completely by surprise. The conflict escalates rapidly. Three young Navy recruits must figure out what is the right thing to do.",
+                "popularity": 703.683,
+                "poster_path": "/s2KE27j9cWDSJKYOg4KxXDwnoiv.jpg",
+                "release_date": "2024-04-11",
+                "title": "Invasion",
+                "video": false,
+                "vote_average": 4.9,
+                "vote_count": 9
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/epQfhIcfqWgrMhRvnxkVm7EeEpE.jpg",
+                "genre_ids": [
+                    878,
+                    27
+                ],
+                "id": 1125510,
+                "original_language": "es",
+                "original_title": "El hoyo 2",
+                "overview": "After a mysterious leader imposes his law in a brutal system of vertical cells, a new arrival battles against a dubious food distribution method.",
+                "popularity": 732.488,
+                "poster_path": "/hf94ySIzdP3KwHau9VSWh7b7Qu2.jpg",
+                "release_date": "2024-09-27",
+                "title": "The Platform 2",
+                "video": false,
+                "vote_average": 5.7,
+                "vote_count": 780
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/1U7EVGj7Noc26owNOreCTKn59Bd.jpg",
+                "genre_ids": [
+                    27
+                ],
+                "id": 86328,
+                "original_language": "en",
+                "original_title": "Terrifier",
+                "overview": "After witnessing a brutal murder on Halloween night, a young woman becomes the next target of a maniacal entity.",
+                "popularity": 749.428,
+                "poster_path": "/uP5k78WkCVrxrFp4AJflHbC61Ao.jpg",
+                "release_date": "2011-08-09",
+                "title": "Terrifier",
+                "video": false,
+                "vote_average": 6.274,
+                "vote_count": 179
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/mpMDztY5OmV7i4ypYpWgqsP4DHs.jpg",
+                "genre_ids": [
+                    27,
+                    53
+                ],
+                "id": 978796,
+                "original_language": "en",
+                "original_title": "Bagman",
+                "overview": "For centuries and across cultures, parents have warned their children of the legendary Bagman, who snatches innocent children and stuffs them into his vile, rotting bag—never to be seen again. Patrick McKee narrowly escaped such an encounter as a boy, which left him with lasting scars throughout his adulthood. Now, Patrick’s childhood tormentor has returned, threatening the safety of his wife Karina and son Jake.",
+                "popularity": 722.15,
+                "poster_path": "/hzrvol8K2VWm2BsDTwb8YvRMzIH.jpg",
+                "release_date": "2024-09-20",
+                "title": "Bagman",
+                "video": false,
+                "vote_average": 6.6,
+                "vote_count": 51
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/hd1TvTUGjkoYoqvXYfSBpI5Ri9B.jpg",
+                "genre_ids": [
+                    16,
+                    28,
+                    12,
+                    878
+                ],
+                "id": 1159311,
+                "original_language": "ja",
+                "original_title": "僕のヒーローアカデミア THE MOVIE ユアネクスト",
+                "overview": "In a society devastated by the effects of an all-out war between heroes and villains, a mysterious giant fortress suddenly appears, engulfing towns and people one after another. Then, a man reminiscent of All Might, the 'symbol of peace', stands in front of Izuku and his friends...",
+                "popularity": 719.943,
+                "poster_path": "/8rdB1wkheEMMqcY8qLAKjCMPcnZ.jpg",
+                "release_date": "2024-08-02",
+                "title": "My Hero Academia: You're Next",
+                "video": false,
+                "vote_average": 6.8,
+                "vote_count": 43
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/vOwezqxpHjBpA5nJIWbapm9Qtgd.jpg",
+                "genre_ids": [
+                    28,
+                    35,
+                    80
+                ],
+                "id": 616446,
+                "original_language": "en",
+                "original_title": "Brothers",
+                "overview": "A reformed criminal's attempt at going straight is derailed when he reunites with his sanity-testing twin brother on a road trip for the score of a lifetime. Dodging bullets, the law, and an overbearing mother along the way, they must heal their severed family bond before they end up killing each other.",
+                "popularity": 718.142,
+                "poster_path": "/Akweo95FGyDpucYVT81h0SbX8Ky.jpg",
+                "release_date": "2024-10-10",
+                "title": "Brothers",
+                "video": false,
+                "vote_average": 6.278,
+                "vote_count": 144
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/m1MifWpNjOU1g8UfIyNSI2dMFZf.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    35,
+                    27
+                ],
+                "id": 1371727,
+                "original_language": "en",
+                "original_title": "Sing: Thriller",
+                "overview": "Buster Moon dreams up a star-studded spectacle set to Michael Jackson's \"Thriller\" in this animated short featuring characters from the hit \"Sing\" films.",
+                "popularity": 791.279,
+                "poster_path": "/i77OInTKcrnRlAozFOaB6D5mk15.jpg",
+                "release_date": "2024-10-16",
+                "title": "Sing: Thriller",
+                "video": false,
+                "vote_average": 7.4,
+                "vote_count": 68
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/edIAwcl5qGzx2jkY8p5GAemqQCx.jpg",
+                "genre_ids": [
+                    10749
+                ],
+                "id": 721173,
+                "original_language": "ko",
+                "original_title": "착한 엄마 3",
+                "overview": "Sun-young and Jun-young are living together. However, they have been unable to pay the rent for several months and listen to the pinzan from the landlord. Eventually, after worrying, he goes to Jun-young's father's house and asks for help. But there, the father's new lover, Ji-young, greets them. Sun-young and Jun-young are unable to borrow money and live in the house for the time being. But after that day. Jun-young's father Dae-woong's eyes keep seeing Sun-young's short mini skirt. Ji-young is interested in Jun-young, who is young and manly…",
+                "popularity": 445.285,
+                "poster_path": "/s65C2cKJeqbHVQHPOaOcp7asdFv.jpg",
+                "release_date": "2019-08-26",
+                "title": "Good Mother 3",
+                "video": false,
+                "vote_average": 5.7,
+                "vote_count": 15
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/cCBdL7v7msKHE0T5lPbaAY8GTJ5.jpg",
+                "genre_ids": [
+                    27
+                ],
+                "id": 231001,
+                "original_language": "en",
+                "original_title": "All Hallows' Eve",
+                "overview": "While watching two children on Halloween night, a babysitter finds an old VHS tape in the kids' trick or treat bag. The tape features three tales of terror, all linked together by a murderous clown.",
+                "popularity": 642.315,
+                "poster_path": "/bSe8CBqK8HkbP6sqZWzcJfQV9Ci.jpg",
+                "release_date": "2013-10-29",
+                "title": "All Hallows' Eve",
+                "video": false,
+                "vote_average": 5.7,
+                "vote_count": 492
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/Asg2UUwipAdE87MxtJy7SQo08XI.jpg",
+                "genre_ids": [
+                    28,
+                    14,
+                    27
+                ],
+                "id": 957452,
+                "original_language": "en",
+                "original_title": "The Crow",
+                "overview": "Soulmates Eric and Shelly are brutally murdered when the demons of her dark past catch up with them. Given the chance to save his true love by sacrificing himself, Eric sets out to seek merciless revenge on their killers, traversing the worlds of the living and the dead to put the wrong things right.",
+                "popularity": 624.165,
+                "poster_path": "/58QT4cPJ2u2TqWZkterDq9q4yxQ.jpg",
+                "release_date": "2024-08-21",
+                "title": "The Crow",
+                "video": false,
+                "vote_average": 5.8,
+                "vote_count": 713
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/b3mdmjYTEL70j7nuXATUAD9qgu4.jpg",
+                "genre_ids": [
+                    16,
+                    14,
+                    12
+                ],
+                "id": 823219,
+                "original_language": "xx",
+                "original_title": "Flow",
+                "overview": "A solitary cat, displaced by a great flood, finds refuge on a boat with various species and must navigate the challenges of adapting to a transformed world together.",
+                "popularity": 556.949,
+                "poster_path": "/dzDMewC0Hwv01SROiWgKOi4iOc1.jpg",
+                "release_date": "2024-08-30",
+                "title": "Flow",
+                "video": false,
+                "vote_average": 8.719,
+                "vote_count": 162
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/tncbMvfV0V07UZozXdBEq4Wu9HH.jpg",
+                "genre_ids": [
+                    28,
+                    35
+                ],
+                "id": 573435,
+                "original_language": "en",
+                "original_title": "Bad Boys: Ride or Die",
+                "overview": "After their late former Captain is framed, Lowrey and Burnett try to clear his name, only to end up on the run themselves.",
+                "popularity": 621.905,
+                "poster_path": "/oGythE98MYleE6mZlGs5oBGkux1.jpg",
+                "release_date": "2024-06-05",
+                "title": "Bad Boys: Ride or Die",
+                "video": false,
+                "vote_average": 7.494,
+                "vote_count": 2290
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/s3ioaDU8OudHWeg7rIbLyU33iXs.jpg",
+                "genre_ids": [
+                    80,
+                    53,
+                    28
+                ],
+                "id": 1047373,
+                "original_language": "en",
+                "original_title": "The Silent Hour",
+                "overview": "While working a case as an interpreter, a hearing-impaired police detective must confront a group of criminals trying to eliminate a deaf murder witness in her apartment building.",
+                "popularity": 741.265,
+                "poster_path": "/j736cRzBtEPCm0nHnpRN1prqiqj.jpg",
+                "release_date": "2024-10-03",
+                "title": "The Silent Hour",
+                "video": false,
+                "vote_average": 6.4,
+                "vote_count": 48
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/tCKWksaQI8XkAQLVou0AlGab5S6.jpg",
+                "genre_ids": [
+                    28,
+                    878
+                ],
+                "id": 1144962,
+                "original_language": "en",
+                "original_title": "Transmorphers: Mech Beasts",
+                "overview": "20 years after the events of Transmorphers, a newer, more advanced species of alien robot descends on a rebuilt Earth, threatening once again to destroy the planet.",
+                "popularity": 580.71,
+                "poster_path": "/oqhaffnQqSzdLrYAQA5W4IdAoCX.jpg",
+                "release_date": "2023-06-09",
+                "title": "Transmorphers: Mech Beasts",
+                "video": false,
+                "vote_average": 5.448,
+                "vote_count": 29
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/3rxoUVI74z7rTWYSAC2q3Uax2nC.jpg",
+                "genre_ids": [
+                    27,
+                    9648
+                ],
+                "id": 1100782,
+                "original_language": "en",
+                "original_title": "Smile 2",
+                "overview": "About to embark on a new world tour, global pop sensation Skye Riley begins experiencing increasingly terrifying and inexplicable events. Overwhelmed by the escalating horrors and the pressures of fame, Skye is forced to face her dark past to regain control of her life before it spirals out of control.",
+                "popularity": 677.012,
+                "poster_path": "/aE85MnPIsSoSs3978Noo16BRsKN.jpg",
+                "release_date": "2024-10-16",
+                "title": "Smile 2",
+                "video": false,
+                "vote_average": 6.9,
+                "vote_count": 266
+            }
+        ],
+        "total_pages": 3,
+        "total_results": 60
+    },
+    {
+        "page": 3,
+        "results": [
+            {
+                "adult": false,
+                "backdrop_path": "/bkENfmxUY3UYsRLizJAhF5IQPvS.jpg",
+                "genre_ids": [
+                    28,
+                    80,
+                    53
+                ],
+                "id": 1025596,
+                "original_language": "en",
+                "original_title": "Blood for Dust",
+                "overview": "Reckless Ricky makes serious money dealing illegal weapons throughout the tri-state area and loves to flaunt it. Traveling salesman Cliff, covers the same territory Ricky runs guns through. Desperate to find some financial relief for his struggling family, Cliff agrees to partner with Ricky, to commit cross-state drug and gun deliveries for a mid-level American cartel boss John. When a simple exchange turns into a bloodbath after Ricky kills everyone in a territory grab, the pair find themselves in a pressure cooker situation where unlikely drug dealer Cliff must fight as hard as he can to stay alive.",
+                "popularity": 390.025,
+                "poster_path": "/nvaCnkl8RilLhVAQXPFei0tqkqW.jpg",
+                "release_date": "2024-04-19",
+                "title": "Blood for Dust",
+                "video": false,
+                "vote_average": 5.8,
+                "vote_count": 45
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/aFDYcmwEWRiEh58Ri1tMpCUWPBp.jpg",
+                "genre_ids": [
+                    10770,
+                    10751,
+                    35,
+                    27,
+                    16
+                ],
+                "id": 1354627,
+                "original_language": "en",
+                "original_title": "SpongeBob Squarepants: Kreepaway Kamp",
+                "overview": "While at Kamp Koral for a reunion, SpongeBob and the gang are stalked by a mysterious figure lurking in the shadows as campers start disappearing one by one!",
+                "popularity": 501.765,
+                "poster_path": "/blRsgsexoBqnjcEJkV8beKAVT6J.jpg",
+                "release_date": "2024-10-10",
+                "title": "SpongeBob Squarepants: Kreepaway Kamp",
+                "video": false,
+                "vote_average": 7.116,
+                "vote_count": 43
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/hLYH6wbi3Mgscdv2KuYcTdWGlUV.jpg",
+                "genre_ids": [
+                    80,
+                    28
+                ],
+                "id": 824003,
+                "original_language": "it",
+                "original_title": "Diabolik chi sei?",
+                "overview": "Captured by a ruthless gang of bank robbers, foes Diabolik and Ginko find themselves facing certain death. While Eva Kant and Altea forge an unlikely alliance to rescue their lovers, Diabolik reveals his mysterious past to the Inspector.",
+                "popularity": 517.931,
+                "poster_path": "/1DAXwi4y941ryPoGbzUlFEEiPAo.jpg",
+                "release_date": "2023-11-30",
+                "title": "Diabolik - Who Are You?",
+                "video": false,
+                "vote_average": 6.3,
+                "vote_count": 96
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/hPIWQT70wQK6akqfLXByEvr62u0.jpg",
+                "genre_ids": [
+                    28,
+                    53,
+                    27,
+                    878
+                ],
+                "id": 726139,
+                "original_language": "ko",
+                "original_title": "탈출: 프로젝트 사일런스",
+                "overview": "Due to sudden deteriorating weather conditions, visibility on the Airport Bridge is severely impaired, leaving people stranded and at risk of the bridge collapsing due to a series of chain collisions and explosions. Amidst the chaos, the canine subjects \"Echo\" from the military experiment \"Project Silence,\" who were being transported in secret, break free, and all human survivors become targets of relentless attacks.",
+                "popularity": 496.467,
+                "poster_path": "/fttoFfKikQMwIoV3UVvlCvBhbUw.jpg",
+                "release_date": "2024-07-11",
+                "title": "Project Silence",
+                "video": false,
+                "vote_average": 7,
+                "vote_count": 208
+            },
+            {
+                "adult": false,
+                "backdrop_path": null,
+                "genre_ids": [
+                    18,
+                    10749
+                ],
+                "id": 1149912,
+                "original_language": "id",
+                "original_title": "Kelas Bintang - Hot Moms",
+                "overview": "",
+                "popularity": 476.356,
+                "poster_path": "/7dBqZmErtrxN9ghOJoW6SimgDo1.jpg",
+                "release_date": "2023-02-09",
+                "title": "Kelas Bintang - Hot Moms",
+                "video": false,
+                "vote_average": 6,
+                "vote_count": 3
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/lntyt4OVDbcxA1l7LtwITbrD3FI.jpg",
+                "genre_ids": [
+                    10749,
+                    18
+                ],
+                "id": 1010581,
+                "original_language": "es",
+                "original_title": "Culpa mía",
+                "overview": "Noah must leave her city, boyfriend, and friends to move into William Leister's mansion, the flashy and wealthy husband of her mother Rafaela. As a proud and independent 17 year old, Noah resists living in a mansion surrounded by luxury. However, it is there where she meets Nick, her new stepbrother, and the clash of their strong personalities becomes evident from the very beginning.",
+                "popularity": 451.755,
+                "poster_path": "/w46Vw536HwNnEzOa7J24YH9DPRS.jpg",
+                "release_date": "2023-06-08",
+                "title": "My Fault",
+                "video": false,
+                "vote_average": 7.916,
+                "vote_count": 3022
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/p4INKu77iuTG1o1a5N3Y9vqeEGq.jpg",
+                "genre_ids": [
+                    27,
+                    53
+                ],
+                "id": 1079485,
+                "original_language": "en",
+                "original_title": "Winnie-the-Pooh: Blood and Honey 2",
+                "overview": "Five months following the murders, Christopher Robin struggles to maintain a regular life while dealing with PTSD. However, deep within the 100-Acre-Wood, a destructive rage grows as Pooh, Piglet, Owl, and Tigger find their home and their lives endangered after their existence is revealed.",
+                "popularity": 464.854,
+                "poster_path": "/2sADrLwMQof6yYmrJRSa04tFZuS.jpg",
+                "release_date": "2024-03-26",
+                "title": "Winnie-the-Pooh: Blood and Honey 2",
+                "video": false,
+                "vote_average": 6.198,
+                "vote_count": 262
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/hu6bwaSRG8GZwH3yEVtRxrgAnjq.jpg",
+                "genre_ids": [
+                    16,
+                    10751,
+                    35,
+                    10402,
+                    10770
+                ],
+                "id": 929563,
+                "original_language": "en",
+                "original_title": "Big City Greens the Movie: Spacecation",
+                "overview": "When thrill-seeker Cricket tricks his family into taking a \"road trip\" in space, chaos in the cosmos quickly ensues. Despite growing frustrations between Cricket and his dad, Bill, the two must learn to appreciate each other's unique perspectives in order to prevent Big City from being destroyed by an interstellar disaster.",
+                "popularity": 446.604,
+                "poster_path": "/wV0nNtlL0nxgse8llRi7SypkCQI.jpg",
+                "release_date": "2024-06-06",
+                "title": "Big City Greens the Movie: Spacecation",
+                "video": false,
+                "vote_average": 8.2,
+                "vote_count": 16
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/2fxnTXr8NwyTFkunkimJkGkhqfy.jpg",
+                "genre_ids": [
+                    18,
+                    28,
+                    27
+                ],
+                "id": 1118031,
+                "original_language": "es",
+                "original_title": "Apocalipsis Z: el principio del fin",
+                "overview": "When a kind of rabies that transforms people into aggressive creatures spreads across the planet, Manel isolates himself at home with his cat, relying on his wits to survive; but soon they must go out in search of food, by land and by sea, dodging many dangers.",
+                "popularity": 513.814,
+                "poster_path": "/hSmOrZl8ON2aJk6xvjNgVQiPdCP.jpg",
+                "release_date": "2024-10-04",
+                "title": "Apocalypse Z: The Beginning of the End",
+                "video": false,
+                "vote_average": 6.6,
+                "vote_count": 159
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/oBmwaZ3NVa3JyZnv1qCo0znxjUw.jpg",
+                "genre_ids": [
+                    80,
+                    27,
+                    53
+                ],
+                "id": 1029281,
+                "original_language": "en",
+                "original_title": "Strange Darling",
+                "overview": "Nothing is what it seems when a twisted one-night stand spirals into a serial killer’s vicious murder spree.",
+                "popularity": 382.742,
+                "poster_path": "/kWNCRgt3ocv19bYO0sk7TRuZuFY.jpg",
+                "release_date": "2024-08-22",
+                "title": "Strange Darling",
+                "video": false,
+                "vote_average": 7.032,
+                "vote_count": 187
+            },
+            {
+                "adult": false,
+                "backdrop_path": null,
+                "genre_ids": [
+                    27,
+                    53
+                ],
+                "id": 1320786,
+                "original_language": "en",
+                "original_title": "Terrifier 4",
+                "overview": "Plot TBA. The fourth installment in the Terrifier franchise.",
+                "popularity": 431.229,
+                "poster_path": "/2p5KjqH3Qo5JI2u8bUAVopzoekm.jpg",
+                "release_date": "",
+                "title": "Terrifier 4",
+                "video": false,
+                "vote_average": 0,
+                "vote_count": 0
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/tPfXJcXxQ3MHyvhzNsDgsXoyPEM.jpg",
+                "genre_ids": [
+                    27,
+                    9648
+                ],
+                "id": 1249532,
+                "original_language": "en",
+                "original_title": "Rippy",
+                "overview": "Young police officer Maddy is determined to live up to her deceased father's legacy. Her courage is put to the test when locals are found brutally ripped to shreds by the zombie kangaroo. As the undead beast leaves a trail of carnage, Maddy, with the help of her eccentric Uncle Schmitty and resilient Aunt Donna, must embark on a high-stakes battle to save the town.",
+                "popularity": 417.807,
+                "poster_path": "/cZ5U4Ae74g29E02JR5oR98RQhiR.jpg",
+                "release_date": "2024-10-25",
+                "title": "Rippy",
+                "video": false,
+                "vote_average": 4.5,
+                "vote_count": 16
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/5tqkP8NNWdteskVBYPRXE6h82ts.jpg",
+                "genre_ids": [
+                    18
+                ],
+                "id": 592695,
+                "original_language": "sv",
+                "original_title": "Pleasure",
+                "overview": "19 year old Linnéa leaves her small town in Sweden and heads for Los Angeles with the aim of becoming the world's next big porn star, but the road to her goal turns out to be bumpier than she imagined.",
+                "popularity": 416.976,
+                "poster_path": "/7Z2K08J0WantJHNa0vLTOmii41l.jpg",
+                "release_date": "2021-10-08",
+                "title": "Pleasure",
+                "video": false,
+                "vote_average": 6.2,
+                "vote_count": 539
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/bEJyUUygNSLhe4BPykEHf3hPnsh.jpg",
+                "genre_ids": [
+                    28,
+                    53
+                ],
+                "id": 1145491,
+                "original_language": "en",
+                "original_title": "Operation Black Ops",
+                "overview": "A group of mercenaries are hired to overthrow a Neo-Nazi stronghold nestled deep in the heart of Texas, only to discover they are protecting nuclear codes that could ignite World War III.",
+                "popularity": 415.78,
+                "poster_path": "/vMgkjQM2fHirExilsTZWJTqL33G.jpg",
+                "release_date": "2023-07-11",
+                "title": "Operation Black Ops",
+                "video": false,
+                "vote_average": 5.71,
+                "vote_count": 31
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/xWT5F1DNxciNLEMXRl49iq8zvN7.jpg",
+                "genre_ids": [
+                    14,
+                    16,
+                    10751
+                ],
+                "id": 9479,
+                "original_language": "en",
+                "original_title": "The Nightmare Before Christmas",
+                "overview": "Tired of scaring humans every October 31 with the same old bag of tricks, Jack Skellington, the spindly king of Halloween Town, kidnaps Santa Claus and plans to deliver shrunken heads and other ghoulish gifts to children on Christmas morning. But as Christmas approaches, Jack's rag-doll girlfriend, Sally, tries to foil his misguided plans.",
+                "popularity": 325.729,
+                "poster_path": "/oQffRNjK8e19rF7xVYEN8ew0j7b.jpg",
+                "release_date": "1993-10-09",
+                "title": "The Nightmare Before Christmas",
+                "video": false,
+                "vote_average": 7.8,
+                "vote_count": 9458
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/l8OyAXEp5FKZWmDhqJMbiwAEvz.jpg",
+                "genre_ids": [
+                    27,
+                    18
+                ],
+                "id": 814889,
+                "original_language": "en",
+                "original_title": "Never Let Go",
+                "overview": "As an evil takes over the world beyond their front doorstep, the only protection for a mother and her twin sons is their house and their family’s protective bond.",
+                "popularity": 399.565,
+                "poster_path": "/3EpZ2ksjijmdr8BhISP03PYzNFW.jpg",
+                "release_date": "2024-09-18",
+                "title": "Never Let Go",
+                "video": false,
+                "vote_average": 6.2,
+                "vote_count": 168
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/g1z1ZvYKcmk9EnVOTYXR6vkNjkZ.jpg",
+                "genre_ids": [
+                    14,
+                    27,
+                    28
+                ],
+                "id": 1087822,
+                "original_language": "en",
+                "original_title": "Hellboy: The Crooked Man",
+                "overview": "Hellboy and a rookie BPRD agent get stranded in 1950s rural Appalachia. There, they discover a small community haunted by witches, led by a local devil with a troubling connection to Hellboy's past: the Crooked Man.",
+                "popularity": 459.1,
+                "poster_path": "/iz2GabtToVB05gLTVSH7ZvFtsMM.jpg",
+                "release_date": "2024-08-29",
+                "title": "Hellboy: The Crooked Man",
+                "video": false,
+                "vote_average": 5.4,
+                "vote_count": 245
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/vGaBqgY8YRzQVUbBMPnd5SmYvL7.jpg",
+                "genre_ids": [
+                    16,
+                    35
+                ],
+                "id": 1329336,
+                "original_language": "en",
+                "original_title": "The Bad Guys: Haunted Heist",
+                "overview": "The crafty Bad Guys crew embarks on a high-stakes Halloween heist to swipe a priceless amulet from a spooky mansion. What could go wrong?",
+                "popularity": 398.095,
+                "poster_path": "/oEJC05CqPugMxC4rFu9r6r6vg6m.jpg",
+                "release_date": "2024-10-02",
+                "title": "The Bad Guys: Haunted Heist",
+                "video": false,
+                "vote_average": 7.318,
+                "vote_count": 74
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/sLp1vdiIQoLgLYsOb9ebDbBYB7D.jpg",
+                "genre_ids": [
+                    12,
+                    35,
+                    14,
+                    28
+                ],
+                "id": 1091181,
+                "original_language": "fr",
+                "original_title": "Loups-Garous",
+                "overview": "When an old card game comes to life, a family jumps back in time to a medieval village where they must unmask werewolves to secure their return home.",
+                "popularity": 375.057,
+                "poster_path": "/uL1dR0L65GZgy3h2gvZcxDu0bRG.jpg",
+                "release_date": "2024-10-22",
+                "title": "Family Pack",
+                "video": false,
+                "vote_average": 5.7,
+                "vote_count": 227
+            },
+            {
+                "adult": false,
+                "backdrop_path": "/nxxCPRGTzxUH8SFMrIsvMmdxHti.jpg",
+                "genre_ids": [
+                    35,
+                    14,
+                    10751
+                ],
+                "id": 639720,
+                "original_language": "en",
+                "original_title": "IF",
+                "overview": "A young girl who goes through a difficult experience begins to see everyone's imaginary friends who have been left behind as their real-life friends have grown up.",
+                "popularity": 378.505,
+                "poster_path": "/xbKFv4KF3sVYuWKllLlwWDmuZP7.jpg",
+                "release_date": "2024-05-08",
+                "title": "IF",
+                "video": false,
+                "vote_average": 7.3,
+                "vote_count": 975
+            }
+        ],
+        "total_pages": 3,
+        "total_results": 60
+    }
+]
