@@ -1,9 +1,9 @@
 import 'package:injectable/injectable.dart';
-import 'package:the_movies_expore/src/data/entity/network_production_country.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_production_country.dart';
 import 'package:the_movies_expore/src/domain/entity/production_country.dart';
 
 @injectable
-final class NewtorkProductionCountryToDomainProductionCountry {
+final class NetworkProductionCountryToDomainProductionCountry {
   ProductionCountry call(
     NetworkProductionCountry networkProductionCountry,
   ) =>

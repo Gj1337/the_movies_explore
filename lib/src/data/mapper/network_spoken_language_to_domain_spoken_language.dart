@@ -1,5 +1,5 @@
 import 'package:injectable/injectable.dart';
-import 'package:the_movies_expore/src/data/entity/network_spoken_language.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/network_spoken_language.dart';
 import 'package:the_movies_expore/src/domain/entity/spoken_language.dart';
 
 @injectable

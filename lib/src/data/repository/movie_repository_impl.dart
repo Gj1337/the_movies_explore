@@ -2,10 +2,14 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:the_movies_expore/src/data/datasource/database/database_data_source.dart';
 import 'package:the_movies_expore/src/data/datasource/local_storage_source.dart';
-import 'package:the_movies_expore/src/data/datasource/network_data_source.dart';
-import 'package:the_movies_expore/src/data/entity/network_responce/genres_response.dart';
-import 'package:the_movies_expore/src/data/entity/network_responce/pagination_list_movie_responce.dart';
+import 'package:the_movies_expore/src/data/datasource/network/network_data_source.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/responces/genres_response.dart';
+import 'package:the_movies_expore/src/data/datasource/network/entity/responces/pagination_list_movie_responce.dart';
+import 'package:the_movies_expore/src/data/mapper/database_movie_with_genres_to_domain_movie.dart';
+import 'package:the_movies_expore/src/data/mapper/domain_genre_to_database_genre.dart';
+import 'package:the_movies_expore/src/data/mapper/domain_movie_to_database_movie.dart';
 import 'package:the_movies_expore/src/data/mapper/domain_movie_to_network_movie.dart';
 import 'package:the_movies_expore/src/data/mapper/network_detailed_movie_to_domain_detailed_movie.dart';
 import 'package:the_movies_expore/src/data/mapper/pagination_list_movie_responce_to_domain_movies_page.dart';
@@ -14,24 +18,36 @@ import 'package:the_movies_expore/src/domain/entity/movie.dart';
 import 'package:the_movies_expore/src/domain/entity/movies_page.dart';
 import 'package:the_movies_expore/src/domain/repository/movie_repository.dart';
 
+// const Movie
+
 @LazySingleton(as: MovieRepository)
 final class MovieRepositoryImpl implements MovieRepository {
   MovieRepositoryImpl(
     this._networkDataSource,
     this._paginationListMovieResponceToDomainMoviesPage,
-    this._localStorageSource,
+    this._databaseDataSource,
     this._domainMovieToNetworkMovie,
     this._networkDetailedMovieToDomainDetailedMovie,
+    this._localStorageSource,
+    this._domainMovieToDatabaseMovie,
+    this._domainGenreToDatabaseGenre,
+    this._databaseMovieWithGanresToDomainMovie,
   );
 
   final NetworkDataSource _networkDataSource;
+  @Deprecated('Use [_appDatabase]')
   final LocalStorageSource _localStorageSource;
+  final DatabaseDataSource _databaseDataSource;
 
   final PaginationListMovieResponceToDomainMoviesPage
       _paginationListMovieResponceToDomainMoviesPage;
   final DomainMovieToNetworkMovie _domainMovieToNetworkMovie;
   final NetworkDetailedMovieToDomainDetailedMovie
       _networkDetailedMovieToDomainDetailedMovie;
+  final DomainMovieToDatabaseMovie _domainMovieToDatabaseMovie;
+  final DomainGenreToDatabaseGenre _domainGenreToDatabaseGenre;
+  final DatabaseMovieWithGanresToDomainMovie
+      _databaseMovieWithGanresToDomainMovie;
 
   final _popularMoviesStreamController =
       StreamController<MoviesPage>.broadcast();
@@ -150,16 +166,23 @@ final class MovieRepositoryImpl implements MovieRepository {
 
   @override
   Future<void> fetchBookmarkMovies({int page = 1}) async {
-    final networkGenres = [...?_localStorageSource.getGenresResponse()?.genres];
+    final databaseMovies = await _databaseDataSource.getBookmaredMovies();
+    final databaseGenres = await _databaseDataSource.getGanres();
 
-    final savedBookmakrsMoviesRepsonse =
-        _localStorageSource.getBookmaredMovies(page);
+    final movies = databaseMovies
+        .map(
+          (databaseMovie) => _databaseMovieWithGanresToDomainMovie.call(
+            databaseMovie: databaseMovie,
+            databaseGenres: databaseGenres,
+          ),
+        )
+        .toList();
 
-    if (savedBookmakrsMoviesRepsonse == null) return;
-
-    final moviePage = _paginationListMovieResponceToDomainMoviesPage(
-      savedBookmakrsMoviesRepsonse,
-      networkGenres,
+    final moviePage = MoviesPage(
+      page: 1,
+      totalResults: movies.length,
+      totalPages: 1,
+      movies: movies,
     );
 
     _bookmarkedMoviesStreamController.add(moviePage);
@@ -167,60 +190,62 @@ final class MovieRepositoryImpl implements MovieRepository {
 
   @override
   Future<void> bookmakrMovie(Movie movie) async {
-    final savedBookmakrsMoviesRepsonse =
-        _localStorageSource.getBookmaredMovies(1);
+    final databaseMovie = _domainMovieToDatabaseMovie(movie);
+    final databseGenres =
+        movie.genres.map(_domainGenreToDatabaseGenre.call).toList();
 
-    final savedBookmakrsMovies = savedBookmakrsMoviesRepsonse?.results ?? [];
+    await _databaseDataSource.bookmarkMovie(databaseMovie);
+    await _databaseDataSource
+        .matchMoviesWithGanre({databaseMovie: databseGenres});
 
-    final networkMovie = _domainMovieToNetworkMovie(movie);
+    final updatedDatabaseBookmarkMovies =
+        await _databaseDataSource.getBookmaredMovies();
+    final updatedDatabaseGenres = await _databaseDataSource.getGanres();
 
-    final newBookmakrsMovies = [...savedBookmakrsMovies, networkMovie];
+    final updatedMovies = updatedDatabaseBookmarkMovies
+        .map(
+          (databaseMovie) => _databaseMovieWithGanresToDomainMovie.call(
+            databaseMovie: databaseMovie,
+            databaseGenres: updatedDatabaseGenres,
+          ),
+        )
+        .toList();
 
-    final a = PaginationMovieListResponse(
+    final moviesPage = MoviesPage(
       page: 1,
-      totalResults: newBookmakrsMovies.length,
+      totalResults: updatedMovies.length,
       totalPages: 1,
-      results: newBookmakrsMovies,
+      movies: updatedMovies,
     );
 
-    _localStorageSource.putBookmaredMovies(a);
-
-    final genresResponse =
-        _localStorageSource.getGenresResponse()?.genres ?? [];
-
-    final moviePage =
-        _paginationListMovieResponceToDomainMoviesPage(a, genresResponse);
-
-    _bookmarkedMoviesStreamController.add(moviePage);
+    _bookmarkedMoviesStreamController.add(moviesPage);
   }
 
   @override
   Future<void> undoBookmarMovie(Movie movie) async {
-    final savedBookmakrsMoviesRepsonse =
-        _localStorageSource.getBookmaredMovies(1);
+    await _databaseDataSource.unbookmarkMovie(movie.id);
 
-    if (savedBookmakrsMoviesRepsonse == null) return;
+    final updatedDatabaseBookmarkMovies =
+        await _databaseDataSource.getBookmaredMovies();
+    final updatedDatabaseGenres = await _databaseDataSource.getGanres();
 
-    final movies = [...savedBookmakrsMoviesRepsonse.results];
+    final updatedMovies = updatedDatabaseBookmarkMovies
+        .map(
+          (databaseMovie) => _databaseMovieWithGanresToDomainMovie.call(
+            databaseMovie: databaseMovie,
+            databaseGenres: updatedDatabaseGenres,
+          ),
+        )
+        .toList();
 
-    movies.removeWhere(
-      (bookmarkedMovie) => bookmarkedMovie.id == movie.id,
+    final moviesPage = MoviesPage(
+      page: 1,
+      totalResults: updatedMovies.length,
+      totalPages: 1,
+      movies: updatedMovies,
     );
 
-    final newBookmakrsMovies =
-        savedBookmakrsMoviesRepsonse.copyWith(results: movies);
-
-    _localStorageSource.putBookmaredMovies(newBookmakrsMovies);
-
-    final genresResponse =
-        _localStorageSource.getGenresResponse()?.genres ?? [];
-
-    final moviePage = _paginationListMovieResponceToDomainMoviesPage(
-      newBookmakrsMovies,
-      genresResponse,
-    );
-
-    _bookmarkedMoviesStreamController.add(moviePage);
+    _bookmarkedMoviesStreamController.add(moviesPage);
   }
 
   @override
