@@ -62,7 +62,7 @@ Currently, the project is ongoing and it hasn't been released to AppStore or Pla
 
 You can upload last version by following sources:
 
-[<img src="https://raw.githubusercontent.com/ismartcoding/plain-app/main/assets/get-it-on-github.png" alt='Get it on GitHub' height="80">](GitHubDownload)
+[<img src="https://raw.githubusercontent.com/ismartcoding/plain-app/main/assets/get-it-on-github.png" alt='Get it on GitHub' height="80">](https://github.com/Gj1337/the_movies_explore/releases/latest)
 
  <!--Links-->
 [Flutter]: https://docs.flutter.dev
@@ -81,5 +81,4 @@ You can upload last version by following sources:
 [API_token_source]: https://developer.themoviedb.org/docs/getting-started
 [FVM]: https://fvm.app
 [Env_setup]: https://dart.dev/guides/environment-declarations
-[GitHubDownload]: https://github.com/Gj1337/the_movies_explore/releases/latest
 
